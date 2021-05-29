@@ -46,7 +46,13 @@
 /* Private variables ---------------------------------------------------------*/
 
 /* USER CODE BEGIN PV */
-
+int64_t initVal = -1;
+int64_t bordaM = 0;
+int64_t valI = 0;
+int64_t valE = 0;
+uint8_t flag = 0;
+uint64_t periodo = 0;
+uint64_t periodoI = 0;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -92,7 +98,8 @@ int main(void)
   MX_USART2_UART_Init();
   MX_TIM2_Init();
   /* USER CODE BEGIN 2 */
-
+  HAL_TIM_Base_Start(&htim2); ///habilita o timer 2
+  HAL_TIM_IC_Start_IT(&htim2, TIM_CHANNEL_1); ///Habilita o Input Capture com Interrupção do Timer2 → PA0 → canal 1
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -152,7 +159,54 @@ void SystemClock_Config(void)
 }
 
 /* USER CODE BEGIN 4 */
+void HAL_TIM_IC_CaptureCallback(TIM_HandleTypeDef *htim){
+	uint64_t calc(long a, long b, long c, long ARR);
 
+	if(htim->Channel == HAL_TIM_ACTIVE_CHANNEL_1){ ///interrupção do canal 1 do timer 3
+		if (initVal == -1) { ///se initVal estiver com seu valor inicial, que é -1
+			initVal = __HAL_TIM_GET_COMPARE(htim, TIM_CHANNEL_1); ///com o estouro, salva o valor que estava no contador
+		} else { ///se initVal for diferente de -1, ou seja, já mediu alguma coisa
+			if(flag == 0){
+				bordaM = __HAL_TIM_GET_COMPARE(htim, TIM_CHANNEL_1); ///salva o valor que está agora
+				periodoI = calc(initVal, bordaM, valE, 999999); ///calcula o periodo utilizando a função criada calc
+				flag = 1;
+			}else {
+				valI = __HAL_TIM_GET_COMPARE(htim, TIM_CHANNEL_1); ///salva o valor que está agora
+				periodo = calc(initVal, valI, valE, 999999); ///calcula o periodo utilizando a função criada calc
+				initVal = valI; ///initVal volta ao seu valor
+				valE = 0; ///valE volta ao seu valor inicial
+				flag = 0;
+			}
+		}
+	}
+}
+
+/**
+ * @brief Função que faz o cálculo do periodo desejado
+ */
+uint64_t calc(long a, long b, long c, long ARR){ ///entra-se com 4 valores para fazer o cálculo, que vão ser os valores de initVal, valI, valE e ARR_CL
+	uint64_t period;
+	if(c > 0) ///se o número de períodos medidos durante a medição for 1 ou mais
+	{
+		if(c > 1) ///se o número de períodos medidos durante a medição for mais que 1
+		{
+			c--;    ///ignorando o final do primeiro periodo
+			period = (ARR - a + b) + (ARR) * c; /// se entre o valor inicial e o valor final (Internal) houverem periodos completos do timer3
+			///ou seja, se tiver mais que um período, utiliza o mesmo cálculo só acrescenta a parte de multiplicar o valor do ARR pelo número de períodos a mais que teve
+		}
+		///se o número de períodos medidos durante a medição for 1
+		else period = (ARR - a + b); /// se o valor inicial e o valor final (Internal) estiverem em periodos subsequentes do timer3
+		///ou seja, se houver passado somente um período
+	}
+	///se o número de períodos medidos durante a medição não completar 1 inteiro
+	else period = b - a; /// se ainda estiver dentro do mesmo periodo do timer3, ou seja, não tiver passado um período completo
+	return period; /// a função retorna o valor do periodo calculado
+}
+
+void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim){ ///Interrupção do final do timer 10, ou seja, estouro do timer
+	if (htim->Instance == TIM2) ///se a interrupção do timer 10 estourou
+			if(initVal > -1) valE++; ///conta quantas vezes o timer estourou adicionando na variável valE
+}
 /* USER CODE END 4 */
 
 /**
