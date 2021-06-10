@@ -102,10 +102,10 @@ int main(void)
   MX_TIM10_Init();
   MX_TIM11_Init();
   /* USER CODE BEGIN 2 */
-  HAL_TIM_Base_Start(&htim11); ///habilita o timer 2
-  HAL_TIM_Base_Start_IT(&htim10);
-  HAL_TIM_IC_Start_IT(&htim2, TIM_CHANNEL_1); ///Habilita o Input Capture com Interrupção do Timer2 → PA0 → canal 1
-  HAL_TIM_PWM_Start(&htim3, TIM_CHANNEL_1);
+  HAL_TIM_Base_Start(&htim11); ///Habilita o timer 11
+  HAL_TIM_Base_Start_IT(&htim10); ///Habilita o timer 10
+  HAL_TIM_IC_Start_IT(&htim2, TIM_CHANNEL_1); ///Habilita o Input Capture com Interrupção do Timer2 → PA0
+  HAL_TIM_PWM_Start(&htim3, TIM_CHANNEL_1); ///Habilita o PWM do Timer 3 → PA6
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -113,8 +113,8 @@ int main(void)
   while (1)
   {
     /* USER CODE END WHILE */
-	  if(__HAL_TIM_GET_FLAG(&htim10, TIM_FLAG_UPDATE)){ ///verifica se passou 1 segundo do Timer11 para imprimir a mensagem na tela (a mensagem é mostrada de 1 em 1 segundo para não ficar muito poluído)
-		sprintf(msg, "Periodo medido: %uus\n\r",(uint64_t)(periodo)); ///faz o cálculo da frequência 1 dividindo o CLOCK do ARM pela multiplicação do período medido + 1 e o valor de PSC (que nesse caso é 47)
+	  if(__HAL_TIM_GET_FLAG(&htim10, TIM_FLAG_UPDATE)){ ///verifica se passou 1 segundo do Timer10 para imprimir a mensagem na tela (a mensagem é mostrada de 1 em 1 segundo para não ficar muito poluído)
+		sprintf(msg, "Periodo medido: %uus\n\r",(uint64_t)(periodo)); ///Exibe o valor da variavel periodo, que eh o valor solicitado
 		HAL_UART_Transmit_IT(&huart2, msg, strlen(msg)); ///Usando a usart2, trasmite a mensagem
 		periodo = 0; ///iguala o periodo a zero para a próxima medição
 	  }
