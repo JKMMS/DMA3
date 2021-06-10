@@ -97,9 +97,14 @@ int main(void)
   MX_DMA_Init();
   MX_USART2_UART_Init();
   MX_TIM2_Init();
+  MX_TIM3_Init();
+  MX_TIM10_Init();
+  MX_TIM11_Init();
   /* USER CODE BEGIN 2 */
-  HAL_TIM_Base_Start(&htim2); ///habilita o timer 2
+  HAL_TIM_Base_Start(&htim11); ///habilita o timer 2
+  HAL_TIM_Base_Start_IT(&htim10);
   HAL_TIM_IC_Start_IT(&htim2, TIM_CHANNEL_1); ///Habilita o Input Capture com Interrupção do Timer2 → PA0 → canal 1
+  HAL_TIM_PWM_Start(&htim3, TIM_CHANNEL_1);
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -204,7 +209,7 @@ uint64_t calc(long a, long b, long c, long ARR){ ///entra-se com 4 valores para 
 }
 
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim){ ///Interrupção do final do timer 10, ou seja, estouro do timer
-	if (htim->Instance == TIM2) ///se a interrupção do timer 10 estourou
+	if (htim->Instance == TIM11) ///se a interrupção do timer 10 estourou
 			if(initVal > -1) valE++; ///conta quantas vezes o timer estourou adicionando na variável valE
 }
 /* USER CODE END 4 */
