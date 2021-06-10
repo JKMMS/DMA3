@@ -47,12 +47,12 @@
 
 /* USER CODE BEGIN PV */
 int64_t initVal = -1;
+int64_t bordaM = 0;
+int64_t valI = 0;
 int64_t valE = 0;
-int64_t value;
 uint8_t flag = 0;
 uint64_t periodo = 0;
 uint64_t periodoI = 0;
-char msg[50];
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -97,25 +97,15 @@ int main(void)
   MX_DMA_Init();
   MX_USART2_UART_Init();
   MX_TIM2_Init();
-  MX_TIM3_Init();
-  MX_TIM10_Init();
-  MX_TIM11_Init();
   /* USER CODE BEGIN 2 */
-  HAL_TIM_Base_Start(&htim10); ///habilita o timer 11
-  HAL_TIM_Base_Start_IT(&htim11); ///habilita o timer 10
-  HAL_TIM_IC_Start_DMA(&htim2, TIM_CHANNEL_1, &value, 1); ///Habilita o Input Capture com Interrupção do Timer2 → PA0 → canal 1
-  HAL_TIM_PWM_Start_IT(&htim3, TIM_CHANNEL_1);
+  HAL_TIM_Base_Start(&htim2); ///habilita o timer 2
+  HAL_TIM_IC_Start_IT(&htim2, TIM_CHANNEL_1); ///Habilita o Input Capture com Interrupção do Timer2 → PA0 → canal 1
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-	  if(__HAL_TIM_GET_FLAG(&htim11, TIM_FLAG_UPDATE)){ ///verifica se passou 1 segundo do Timer11 para imprimir a mensagem na tela (a mensagem é mostrada de 1 em 1 segundo para não ficar muito poluído)
-		sprintf(msg, "Periodo medido: %uus\n\r",(uint64_t)(periodo)); ///faz o cálculo da frequência 1 dividindo o CLOCK do ARM pela multiplicação do período medido + 1 e o valor de PSC (que nesse caso é 47)
-		HAL_UART_Transmit_IT(&huart2, msg, strlen(msg)); ///Usando a usart2, trasmite a mensagem
-		periodo = 0; ///iguala o periodo a zero para a próxima medição
-	  }
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
@@ -174,16 +164,18 @@ void HAL_TIM_IC_CaptureCallback(TIM_HandleTypeDef *htim){
 
 	if(htim->Channel == HAL_TIM_ACTIVE_CHANNEL_1){ ///interrupção do canal 1 do timer 3
 		if (initVal == -1) { ///se initVal estiver com seu valor inicial, que é -1
-			initVal = value; ///com o estouro, salva o valor que estava no contador
+			initVal = __HAL_TIM_GET_COMPARE(htim, TIM_CHANNEL_1); ///com o estouro, salva o valor que estava no contador
 		} else { ///se initVal for diferente de -1, ou seja, já mediu alguma coisa
-			if(flag == 0){ //se está "no meio do caminho"
-				periodoI = calc(initVal, value, valE, 999999); ///calcula o periodo utilizando a função criada calc
-				flag = 1; //se é 1 significa que a próxima vez que estourar ele vai estar no final do periodo
-			}else { //se estiver no final do periodo
-				periodo = calc(initVal, value, valE, 999999); ///calcula o periodo utilizando a função criada calc
-				initVal = value; ///initVal volta ao seu valor
+			if(flag == 0){
+				bordaM = __HAL_TIM_GET_COMPARE(htim, TIM_CHANNEL_1); ///salva o valor que está agora
+				periodoI = calc(initVal, bordaM, valE, 999999); ///calcula o periodo utilizando a função criada calc
+				flag = 1;
+			}else {
+				valI = __HAL_TIM_GET_COMPARE(htim, TIM_CHANNEL_1); ///salva o valor que está agora
+				periodo = calc(initVal, valI, valE, 999999); ///calcula o periodo utilizando a função criada calc
+				initVal = valI; ///initVal volta ao seu valor
 				valE = 0; ///valE volta ao seu valor inicial
-				flag = 0; //zera a flag novamente para a proxima medição
+				flag = 0;
 			}
 		}
 	}
@@ -212,7 +204,7 @@ uint64_t calc(long a, long b, long c, long ARR){ ///entra-se com 4 valores para 
 }
 
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim){ ///Interrupção do final do timer 10, ou seja, estouro do timer
-	if (htim->Instance == TIM11) ///se a interrupção do timer 10 estourou
+	if (htim->Instance == TIM2) ///se a interrupção do timer 10 estourou
 			if(initVal > -1) valE++; ///conta quantas vezes o timer estourou adicionando na variável valE
 }
 /* USER CODE END 4 */
