@@ -19,6 +19,7 @@
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
+#include "adc.h"
 #include "dma.h"
 #include "tim.h"
 #include "usart.h"
@@ -47,9 +48,8 @@
 
 /* USER CODE BEGIN PV */
 int64_t initVal = -1;
-int64_t bordaM = 0;
-int64_t valI = 0;
 int64_t valE = 0;
+int64_t value = 0;
 uint8_t flag = 0;
 uint64_t periodo = 0;
 uint64_t periodoI = 0;
@@ -97,9 +97,11 @@ int main(void)
   MX_DMA_Init();
   MX_USART2_UART_Init();
   MX_TIM2_Init();
+  MX_TIM4_Init();
+  MX_ADC1_Init();
   /* USER CODE BEGIN 2 */
   HAL_TIM_Base_Start(&htim2); ///habilita o timer 2
-  HAL_TIM_IC_Start_IT(&htim2, TIM_CHANNEL_1); ///Habilita o Input Capture com Interrupção do Timer2 → PA0 → canal 1
+  HAL_TIM_IC_Start_DMA(&htim2, TIM_CHANNEL_1, &value, 1); ///Habilita o Input Capture com Interrupção do Timer2 → PA0 → canal 1
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -164,16 +166,14 @@ void HAL_TIM_IC_CaptureCallback(TIM_HandleTypeDef *htim){
 
 	if(htim->Channel == HAL_TIM_ACTIVE_CHANNEL_1){ ///interrupção do canal 1 do timer 3
 		if (initVal == -1) { ///se initVal estiver com seu valor inicial, que é -1
-			initVal = __HAL_TIM_GET_COMPARE(htim, TIM_CHANNEL_1); ///com o estouro, salva o valor que estava no contador
+			initVal = value; ///com o estouro, salva o valor que estava no contador
 		} else { ///se initVal for diferente de -1, ou seja, já mediu alguma coisa
 			if(flag == 0){
-				bordaM = __HAL_TIM_GET_COMPARE(htim, TIM_CHANNEL_1); ///salva o valor que está agora
-				periodoI = calc(initVal, bordaM, valE, 999999); ///calcula o periodo utilizando a função criada calc
+				periodoI = calc(initVal, value, valE, 999999); ///calcula o periodo utilizando a função criada calc
 				flag = 1;
-			}else {
-				valI = __HAL_TIM_GET_COMPARE(htim, TIM_CHANNEL_1); ///salva o valor que está agora
-				periodo = calc(initVal, valI, valE, 999999); ///calcula o periodo utilizando a função criada calc
-				initVal = valI; ///initVal volta ao seu valor
+			}else{
+				periodo = calc(initVal, value, valE, 999999); ///calcula o periodo utilizando a função criada calc
+				initVal = value; ///initVal volta ao seu valor
 				valE = 0; ///valE volta ao seu valor inicial
 				flag = 0;
 			}
