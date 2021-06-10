@@ -113,7 +113,7 @@ int main(void)
   while (1)
   {
     /* USER CODE END WHILE */
-	  if(__HAL_TIM_GET_FLAG(&htim11, TIM_FLAG_UPDATE)){ ///verifica se passou 1 segundo do Timer11 para imprimir a mensagem na tela (a mensagem é mostrada de 1 em 1 segundo para não ficar muito poluído)
+	  if(__HAL_TIM_GET_FLAG(&htim10, TIM_FLAG_UPDATE)){ ///verifica se passou 1 segundo do Timer11 para imprimir a mensagem na tela (a mensagem é mostrada de 1 em 1 segundo para não ficar muito poluído)
 		sprintf(msg, "Periodo medido: %uus\n\r",(uint64_t)(periodo)); ///faz o cálculo da frequência 1 dividindo o CLOCK do ARM pela multiplicação do período medido + 1 e o valor de PSC (que nesse caso é 47)
 		HAL_UART_Transmit_IT(&huart2, msg, strlen(msg)); ///Usando a usart2, trasmite a mensagem
 		periodo = 0; ///iguala o periodo a zero para a próxima medição

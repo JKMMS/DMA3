@@ -663,8 +663,8 @@ int main(void)
   while (1)
   {
     /* USER CODE END WHILE */
-	  if(__HAL_TIM_GET_FLAG(&htim11, TIM_FLAG_UPDATE)){ ///verifica se passou 1 segundo do Timer11 para imprimir a mensagem na tela (a mensagem é mostrada de 1 em 1 segundo para não ficar muito poluído)
- 800072c:	4b0f      	ldr	r3, [pc, #60]	; (800076c <main+0x84>)
+	  if(__HAL_TIM_GET_FLAG(&htim10, TIM_FLAG_UPDATE)){ ///verifica se passou 1 segundo do Timer11 para imprimir a mensagem na tela (a mensagem é mostrada de 1 em 1 segundo para não ficar muito poluído)
+ 800072c:	4b10      	ldr	r3, [pc, #64]	; (8000770 <main+0x88>)
  800072e:	681b      	ldr	r3, [r3, #0]
  8000730:	691b      	ldr	r3, [r3, #16]
  8000732:	f003 0301 	and.w	r3, r3, #1
@@ -690,7 +690,7 @@ int main(void)
  800075e:	f04f 0200 	mov.w	r2, #0
  8000762:	f04f 0300 	mov.w	r3, #0
  8000766:	e9c1 2300 	strd	r2, r3, [r1]
-	  if(__HAL_TIM_GET_FLAG(&htim11, TIM_FLAG_UPDATE)){ ///verifica se passou 1 segundo do Timer11 para imprimir a mensagem na tela (a mensagem é mostrada de 1 em 1 segundo para não ficar muito poluído)
+	  if(__HAL_TIM_GET_FLAG(&htim10, TIM_FLAG_UPDATE)){ ///verifica se passou 1 segundo do Timer11 para imprimir a mensagem na tela (a mensagem é mostrada de 1 em 1 segundo para não ficar muito poluído)
  800076a:	e7df      	b.n	800072c <main+0x44>
  800076c:	20000228 	.word	0x20000228
  8000770:	20000198 	.word	0x20000198
