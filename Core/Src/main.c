@@ -98,6 +98,8 @@ int main(void)
   MX_DMA_Init();
   MX_USART2_UART_Init();
   MX_TIM2_Init();
+  MX_TIM10_Init();
+  MX_TIM11_Init();
   /* USER CODE BEGIN 2 */
   HAL_TIM_Base_Start(&htim2); ///habilita o timer 2
   HAL_TIM_IC_Start_IT(&htim2, TIM_CHANNEL_1); ///Habilita o Input Capture com Interrupção do Timer2 → PA0 → canal 1
