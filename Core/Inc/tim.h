@@ -31,19 +31,27 @@ extern "C" {
 
 /* USER CODE END Includes */
 
-extern TIM_HandleTypeDef htim1;
 extern TIM_HandleTypeDef htim2;
-extern TIM_HandleTypeDef htim4;
+<<<<<<< Updated upstream
+=======
+extern TIM_HandleTypeDef htim3;
+extern TIM_HandleTypeDef htim8;
+>>>>>>> Stashed changes
+extern TIM_HandleTypeDef htim10;
+extern TIM_HandleTypeDef htim11;
 
 /* USER CODE BEGIN Private defines */
 
 /* USER CODE END Private defines */
 
-void MX_TIM1_Init(void);
 void MX_TIM2_Init(void);
-void MX_TIM4_Init(void);
-
-void HAL_TIM_MspPostInit(TIM_HandleTypeDef *htim);
+<<<<<<< Updated upstream
+=======
+void MX_TIM3_Init(void);
+void MX_TIM8_Init(void);
+>>>>>>> Stashed changes
+void MX_TIM10_Init(void);
+void MX_TIM11_Init(void);
 
 /* USER CODE BEGIN Prototypes */
 
