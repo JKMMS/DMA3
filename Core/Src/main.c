@@ -168,7 +168,7 @@ void SystemClock_Config(void)
 }
 
 /* USER CODE BEGIN 4 */
-void HAL_IC_TIM_CaptureCallback(TIM_HandleTypeDef *htim){
+void HAL_TIM_IC_CaptureCallback(TIM_HandleTypeDef *htim){
 	uint64_t calc(long a, long b, long c, long ARR);
 
 	if(htim->Channel == HAL_TIM_ACTIVE_CHANNEL_1){ ///interrupção do canal 1 do timer 3
