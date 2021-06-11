@@ -103,7 +103,7 @@ int main(void)
   /* USER CODE BEGIN 2 */
   HAL_TIM_Base_Start(&htim11); ///Habilita o timer 11
   HAL_TIM_Base_Start_IT(&htim10); ///Habilita o timer 10
-  HAL_TIM_IC_Start_IT(&htim2, TIM_CHANNEL_1); ///Habilita o Input Capture com Interrupção do Timer2 → PA0
+  HAL_TIM_Base_Start_DMA(&htim2, &value, 1); ///PA0
   HAL_TIM_PWM_Start(&htim3, TIM_CHANNEL_1); ///Habilita o PWM do Timer 3 → PA6
   /* USER CODE END 2 */
 
@@ -168,7 +168,7 @@ void SystemClock_Config(void)
 }
 
 /* USER CODE BEGIN 4 */
-void HAL_TIM_IC_CaptureCallback(TIM_HandleTypeDef *htim){
+void HAL_IC_TIM_CaptureCallback(TIM_HandleTypeDef *htim){
 	uint64_t calc(long a, long b, long c, long ARR);
 
 	if(htim->Channel == HAL_TIM_ACTIVE_CHANNEL_1){ ///interrupção do canal 1 do timer 3
@@ -186,6 +186,7 @@ void HAL_TIM_IC_CaptureCallback(TIM_HandleTypeDef *htim){
 			}
 		}
 	}
+	HAL_TIM_Base_Start_DMA(&htim2, &value, 1);
 }
 
 /**
