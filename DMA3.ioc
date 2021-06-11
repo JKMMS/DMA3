@@ -14,11 +14,7 @@ Dma.USART2_TX.1.MemInc=DMA_MINC_ENABLE
 RCC.PLLCLKFreq_Value=84000000
 PA14.GPIO_Label=TCK
 RCC.PLLQCLKFreq_Value=168000000
-<<<<<<< Updated upstream
-ProjectManager.functionlistsort=1-MX_GPIO_Init-GPIO-false-HAL-true,2-MX_DMA_Init-DMA-false-HAL-true,3-SystemClock_Config-RCC-false-HAL-false,4-MX_USART2_UART_Init-USART2-false-HAL-true,5-MX_TIM2_Init-TIM2-false-HAL-true
-=======
 ProjectManager.functionlistsort=1-MX_GPIO_Init-GPIO-false-HAL-true,2-MX_DMA_Init-DMA-false-HAL-true,3-SystemClock_Config-RCC-false-HAL-false,4-MX_USART2_UART_Init-USART2-false-HAL-true,5-MX_TIM2_Init-TIM2-false-HAL-true,6-MX_TIM3_Init-TIM3-false-HAL-true,7-MX_TIM10_Init-TIM10-false-HAL-true,8-MX_TIM11_Init-TIM11-false-HAL-true,9-MX_ADC1_Init-ADC1-false-HAL-true,10-MX_TIM8_Init-TIM8-false-HAL-true
->>>>>>> Stashed changes
 RCC.RTCFreq_Value=32000
 PA3.GPIOParameters=GPIO_Label
 RCC.PLLI2SRCLKFreq_Value=96000000
@@ -34,12 +30,8 @@ ProjectManager.StackSize=0x400
 SH.GPXTI13.0=GPIO_EXTI13
 Mcu.IP4=SYS
 RCC.FCLKCortexFreq_Value=84000000
-<<<<<<< Updated upstream
-Mcu.IP5=TIM10
-=======
 Mcu.IP5=TIM2
 Mcu.IP2=NVIC
->>>>>>> Stashed changes
 NVIC.SVCall_IRQn=true\:0\:0\:false\:false\:true\:false\:false
 Mcu.IP3=RCC
 Mcu.IP0=ADC1
@@ -50,15 +42,12 @@ SH.GPXTI13.ConfNb=1
 Mcu.ThirdPartyNb=0
 RCC.SDIOFreq_Value=168000000
 RCC.HCLKFreq_Value=84000000
-<<<<<<< Updated upstream
-Mcu.IPNb=8
-=======
 Mcu.IPNb=11
->>>>>>> Stashed changes
 RCC.I2SClocksFreq_Value=96000000
 TIM2.IPParameters=Channel-Input_Capture1_from_TI1,Prescaler,Period,ICPolarity_CH1
 ProjectManager.PreviousToolchain=
 RCC.APB2TimFreq_Value=84000000
+TIM3.Period=41999
 VP_TIM10_VS_ClockSourceINT.Mode=Enable_Timer
 RCC.SPDIFRXFreq_Value=168000000
 RCC.VcooutputI2S=96000000
@@ -66,35 +55,25 @@ Dma.USART2_TX.1.Mode=DMA_NORMAL
 Mcu.Pin6=PA1
 Mcu.Pin7=PA2
 VP_TIM2_VS_ClockSourceINT.Signal=TIM2_VS_ClockSourceINT
-<<<<<<< Updated upstream
-Mcu.Pin8=PA5
-Mcu.Pin9=PA13
-=======
 NVIC.DMA2_Stream0_IRQn=true\:0\:0\:false\:false\:true\:false\:true
 Mcu.Pin8=PA3
 Mcu.Pin9=PA5
->>>>>>> Stashed changes
 RCC.VCOSAIOutputFreq_Value=192000000
 RCC.AHBFreq_Value=84000000
 PH0-OSC_IN.Mode=HSE-External-Oscillator
 Mcu.Pin0=PC13
+TIM11.IPParameters=Prescaler,Period,AutoReloadPreload
 Mcu.Pin1=PC14-OSC32_IN
-<<<<<<< Updated upstream
-=======
 TIM3.Channel-PWM\ Generation1\ CH1=TIM_CHANNEL_1
 TIM8.IPParameters=Prescaler,Period,TIM_MasterOutputTrigger
 GPIO.groupedBy=Group By Peripherals
->>>>>>> Stashed changes
 Mcu.Pin2=PC15-OSC32_OUT
 Mcu.Pin3=PH0-OSC_IN
 Mcu.Pin4=PH1-OSC_OUT
 NVIC.EXTI15_10_IRQn=true\:0\:0\:false\:false\:true\:true\:true
 Mcu.Pin5=PA0-WKUP
-<<<<<<< Updated upstream
-=======
 ADC1.Channel-0\#ChannelRegularConversion=ADC_CHANNEL_0
 TIM10.AutoReloadPreload=TIM_AUTORELOAD_PRELOAD_DISABLE
->>>>>>> Stashed changes
 ProjectManager.ProjectBuild=false
 NVIC.TIM1_TRG_COM_TIM11_IRQn=true\:0\:0\:false\:false\:true\:true\:true
 RCC.HSE_VALUE=8000000
@@ -113,10 +92,7 @@ PA14.Mode=Serial_Wire
 Dma.USART2_TX.1.Instance=DMA1_Stream6
 SH.ADCx_IN1.ConfNb=1
 Dma.TIM2_CH1.0.RequestParameters=Instance,Direction,PeriphInc,MemInc,PeriphDataAlignment,MemDataAlignment,Mode,Priority,FIFOMode
-<<<<<<< Updated upstream
-=======
 TIM3.Prescaler=1999
->>>>>>> Stashed changes
 NVIC.TIM2_IRQn=true\:0\:0\:false\:false\:true\:true\:true
 File.Version=6
 PH1-OSC_OUT.Locked=true
@@ -125,21 +101,19 @@ PB3.GPIOParameters=GPIO_Label
 RCC.PLLRCLKFreq_Value=168000000
 SH.ADCx_IN0.0=ADC1_IN0,IN0
 NVIC.PendSV_IRQn=true\:0\:0\:false\:false\:true\:false\:false
-<<<<<<< Updated upstream
-Dma.RequestsNb=2
-=======
 SH.S_TIM3_CH1.0=TIM3_CH1,PWM Generation1 CH1
 Dma.RequestsNb=3
->>>>>>> Stashed changes
 ProjectManager.HalAssertFull=false
 ADC1.SamplingTime-0\#ChannelRegularConversion=ADC_SAMPLETIME_3CYCLES
 ProjectManager.ProjectName=DMA3
 RCC.FLatency-AdvancedSettings=FLASH_LATENCY_2
+TIM3.OCPolarity_1=TIM_OCPOLARITY_LOW
 PA13.GPIOParameters=GPIO_Label
 PH1-OSC_OUT.Mode=HSE-External-Oscillator
 RCC.MCO2PinFreq_Value=84000000
 Mcu.Package=LQFP64
 TIM2.Prescaler=83
+PA6.Signal=S_TIM3_CH1
 Dma.TIM2_CH1.0.FIFOMode=DMA_FIFOMODE_DISABLE
 PA5.Locked=true
 USART2.VirtualMode=VM_ASYNC
@@ -162,9 +136,10 @@ NVIC.BusFault_IRQn=true\:0\:0\:false\:false\:true\:true\:false
 RCC.SAIBFreq_Value=96000000
 NVIC.DMA1_Stream6_IRQn=true\:0\:0\:false\:false\:true\:false\:true
 Dma.Request0=TIM2_CH1
-TIM10.IPParameters=Prescaler,Period
+TIM10.IPParameters=Prescaler,Period,AutoReloadPreload
 Dma.TIM2_CH1.0.Direction=DMA_PERIPH_TO_MEMORY
 ProjectManager.CustomerFirmwarePackage=
+VP_TIM3_VS_ClockSourceINT.Mode=Internal
 PC14-OSC32_IN.Locked=true
 RCC.PLLSAIQCLKFreq_Value=96000000
 PB3.Locked=true
@@ -176,13 +151,10 @@ TIM10.Prescaler=1999
 PC15-OSC32_OUT.Mode=LSE-External-Oscillator
 Dma.USART2_TX.1.Priority=DMA_PRIORITY_HIGH
 ProjectManager.ProjectFileName=DMA3.ioc
-<<<<<<< Updated upstream
-Mcu.PinsNb=16
-=======
 ADC1.Rank-0\#ChannelRegularConversion=1
 Mcu.PinsNb=21
->>>>>>> Stashed changes
 Dma.USART2_TX.1.FIFOMode=DMA_FIFOMODE_DISABLE
+TIM3.AutoReloadPreload=TIM_AUTORELOAD_PRELOAD_ENABLE
 ProjectManager.NoMain=false
 ADC1.IPParameters=Rank-0\#ChannelRegularConversion,master,Channel-0\#ChannelRegularConversion,SamplingTime-0\#ChannelRegularConversion,NbrOfConversionFlag,Rank-1\#ChannelRegularConversion,Channel-1\#ChannelRegularConversion,SamplingTime-1\#ChannelRegularConversion,NbrOfConversion,DMAContinuousRequests,ExternalTrigConv
 PC13.Locked=true
@@ -191,6 +163,7 @@ Dma.ADC1.2.PeriphDataAlignment=DMA_PDATAALIGN_HALFWORD
 RCC.FMPI2C1Freq_Value=42000000
 RCC.VCOI2SInputFreq_Value=1000000
 ProjectManager.DefaultFWLocation=true
+TIM11.Prescaler=1999
 ProjectManager.DeletePrevious=true
 RCC.APB1CLKDivider=RCC_HCLK_DIV2
 PC14-OSC32_IN.Signal=RCC_OSC32_IN
@@ -206,6 +179,7 @@ PA13.Signal=SYS_JTMS-SWDIO
 Dma.ADC1.2.MemInc=DMA_MINC_ENABLE
 NVIC.TIM8_CC_IRQn=true\:0\:0\:false\:false\:true\:true\:true
 PC15-OSC32_OUT.Locked=true
+TIM3.Pulse-PWM\ Generation1\ CH1=20999
 ProjectManager.TargetToolchain=STM32CubeIDE
 NVIC.DMA1_Stream5_IRQn=true\:0\:0\:false\:false\:true\:false\:true
 NVIC.TIM8_BRK_TIM12_IRQn=true\:0\:0\:false\:false\:true\:true\:true
@@ -215,6 +189,7 @@ Dma.ADC1.2.RequestParameters=Instance,Direction,PeriphInc,MemInc,PeriphDataAlign
 RCC.VCOInputMFreq_Value=1000000
 ProjectManager.RegisterCallBack=
 RCC.USBFreq_Value=168000000
+VP_TIM3_VS_ClockSourceINT.Signal=TIM3_VS_ClockSourceINT
 PC15-OSC32_OUT.Signal=RCC_OSC32_OUT
 PA1.Signal=ADCx_IN1
 RCC.VCOI2SOutputFreq_Value=192000000
@@ -224,7 +199,9 @@ RCC.PLLSAIPCLKFreq_Value=96000000
 board=NUCLEO-F446RE
 RCC.VCOOutputFreq_Value=336000000
 ProjectManager.LastFirmware=true
-TIM10.Period=42000
+NVIC.TIM3_IRQn=true\:0\:0\:false\:false\:true\:true\:true
+TIM11.Period=41999
+TIM10.Period=41999
 Dma.USART2_TX.1.Direction=DMA_MEMORY_TO_PERIPH
 RCC.APB2Freq_Value=84000000
 Dma.TIM2_CH1.0.Priority=DMA_PRIORITY_VERY_HIGH
@@ -235,6 +212,7 @@ SH.ADCx_IN0.ConfNb=1
 PC13.GPIOParameters=GPIO_Label,GPIO_ModeDefaultEXTI
 VP_SYS_VS_Systick.Mode=SysTick
 RCC.EthernetFreq_Value=84000000
+TIM3.IPParameters=Prescaler,Period,AutoReloadPreload,Channel-PWM Generation1 CH1,OCPolarity_1,Pulse-PWM Generation1 CH1
 PH1-OSC_OUT.Signal=RCC_OSC_OUT
 NVIC.NonMaskableInt_IRQn=true\:0\:0\:false\:false\:true\:true\:false
 ADC1.DMAContinuousRequests=ENABLE
@@ -247,14 +225,8 @@ ProjectManager.AskForMigrate=true
 Mcu.Name=STM32F446R(C-E)Tx
 RCC.PLLI2SQCLKFreq_Value=96000000
 RCC.RTCHSEDivFreq_Value=4000000
-PA13.GPIO_Label=TMS
-<<<<<<< Updated upstream
 PA2.Signal=USART2_TX
-ProjectManager.UnderRoot=true
-Mcu.IP6=TIM11
-RCC.VCOSAIInputFreq_Value=1000000
-Mcu.IP7=USART2
-=======
+PA13.GPIO_Label=TMS
 Dma.ADC1.2.Instance=DMA2_Stream0
 ProjectManager.UnderRoot=true
 Mcu.IP8=TIM10
@@ -264,7 +236,6 @@ Mcu.IP9=TIM11
 Mcu.IP6=TIM3
 RCC.VCOSAIInputFreq_Value=1000000
 Mcu.IP7=TIM8
->>>>>>> Stashed changes
 ProjectManager.CoupleFile=true
 RCC.48MHZClocksFreq_Value=84000000
 PB3.Signal=SYS_JTDO-SWO
@@ -290,21 +261,6 @@ SH.S_TIM2_CH1_ETR.0=TIM2_CH1,Input_Capture1_from_TI1
 Dma.TIM2_CH1.0.MemDataAlignment=DMA_MDATAALIGN_WORD
 PA14.Signal=SYS_JTCK-SWCLK
 ProjectManager.HeapSize=0x200
-<<<<<<< Updated upstream
-Mcu.Pin15=VP_TIM11_VS_ClockSourceINT
-NVIC.HardFault_IRQn=true\:0\:0\:false\:false\:true\:true\:false
-Mcu.Pin13=VP_TIM2_VS_ClockSourceINT
-Mcu.Pin14=VP_TIM10_VS_ClockSourceINT
-NVIC.TIM1_UP_TIM10_IRQn=true\:0\:0\:false\:false\:true\:true\:true
-ProjectManager.ComputerToolchain=false
-RCC.HSI_VALUE=16000000
-RCC.PLLP=RCC_PLLP_DIV4
-NVIC.PriorityGroup=NVIC_PRIORITYGROUP_0
-Mcu.Pin11=PB3
-Mcu.Pin12=VP_SYS_VS_Systick
-RCC.PLLN=336
-Mcu.Pin10=PA14
-=======
 Mcu.Pin15=VP_SYS_VS_Systick
 NVIC.HardFault_IRQn=true\:0\:0\:false\:false\:true\:true\:false
 Mcu.Pin16=VP_TIM2_VS_ClockSourceINT
@@ -326,7 +282,6 @@ Mcu.Pin11=PA13
 Mcu.Pin12=PA14
 RCC.PLLN=336
 Mcu.Pin10=PA6
->>>>>>> Stashed changes
 PA2.Mode=Asynchronous
 RCC.PWRFreq_Value=84000000
 Dma.USART2_TX.1.MemDataAlignment=DMA_MDATAALIGN_BYTE

@@ -51,22 +51,16 @@ int64_t initVal = -1;
 int64_t bordaM = 0;
 int64_t valI = 0;
 int64_t valE = 0;
-<<<<<<< Updated upstream
 int64_t valDMA = 0;
-=======
 volatile int64_t value;
->>>>>>> Stashed changes
 uint8_t flag = 0;
 uint8_t flagT = 0;
 uint64_t periodo = 0;
 uint64_t periodoI = 0;
-<<<<<<< Updated upstream
-=======
 volatile uint16_t medidas[4];
 uint16_t media1;
 uint16_t media2;
 char msg[50];
->>>>>>> Stashed changes
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -111,31 +105,30 @@ int main(void)
   MX_DMA_Init();
   MX_USART2_UART_Init();
   MX_TIM2_Init();
+  MX_TIM3_Init();
   MX_TIM10_Init();
   MX_TIM11_Init();
   MX_ADC1_Init();
   MX_TIM8_Init();
   /* USER CODE BEGIN 2 */
-<<<<<<< Updated upstream
+
   HAL_TIM_Base_Start(&htim2); ///habilita o timer 2
   HAL_TIM_IC_Start_IT(&htim2, TIM_CHANNEL_1); ///Habilita o Input Capture com Interrupção do Timer2 → PA0 → canal 1
   HAL_TIM_IC_Start_DMA(&htim2 , TIM_CHANNEL_1, &valDMA, 1);
-=======
   HAL_TIM_Base_Start(&htim10); ///habilita o timer 11
   HAL_TIM_Base_Start_IT(&htim11); ///habilita o timer 10
   HAL_TIM_IC_Start_DMA(&htim2, TIM_CHANNEL_1, &value, 1); ///Habilita o Input Capture com Interrupção do Timer2 → PA0 → canal 1
   HAL_TIM_PWM_Start_IT(&htim3, TIM_CHANNEL_1);
   HAL_TIM_Base_Start_IT(&htim8);
   HAL_ADC_Start_DMA(&hadc1, medidas, 4);
->>>>>>> Stashed changes
+
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-<<<<<<< Updated upstream
-=======
+
 	  if(__HAL_TIM_GET_FLAG(&htim10, TIM_FLAG_UPDATE)){ ///verifica se passou 1 segundo do Timer11 para imprimir a mensagem na tela (a mensagem é mostrada de 1 em 1 segundo para não ficar muito poluído)
 		if(flagT==0){
 			sprintf(msg, "media1: %4lu\n\r",media1); ///faz o cálculo da frequência 1 dividindo o CLOCK do ARM pela multiplicação do período medido + 1 e o valor de PSC (que nesse caso é 47)
@@ -151,7 +144,6 @@ int main(void)
 		}
 		__HAL_TIM_CLEAR_FLAG(&htim10, TIM_FLAG_UPDATE);
 	}
->>>>>>> Stashed changes
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
@@ -251,7 +243,7 @@ uint64_t calc(long a, long b, long c, long ARR){ ///entra-se com 4 valores para 
 }
 
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim){ ///Interrupção do final do timer 10, ou seja, estouro do timer
-	if (htim->Instance == TIM2) ///se a interrupção do timer 10 estourou
+	if (htim->Instance == TIM11) ///se a interrupção do timer 10 estourou
 			if(initVal > -1) valE++; ///conta quantas vezes o timer estourou adicionando na variável valE
 }
 void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef* hadc){

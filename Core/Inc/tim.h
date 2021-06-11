@@ -32,11 +32,8 @@ extern "C" {
 /* USER CODE END Includes */
 
 extern TIM_HandleTypeDef htim2;
-<<<<<<< Updated upstream
-=======
 extern TIM_HandleTypeDef htim3;
 extern TIM_HandleTypeDef htim8;
->>>>>>> Stashed changes
 extern TIM_HandleTypeDef htim10;
 extern TIM_HandleTypeDef htim11;
 
@@ -45,13 +42,12 @@ extern TIM_HandleTypeDef htim11;
 /* USER CODE END Private defines */
 
 void MX_TIM2_Init(void);
-<<<<<<< Updated upstream
-=======
 void MX_TIM3_Init(void);
 void MX_TIM8_Init(void);
->>>>>>> Stashed changes
 void MX_TIM10_Init(void);
 void MX_TIM11_Init(void);
+
+void HAL_TIM_MspPostInit(TIM_HandleTypeDef *htim);
 
 /* USER CODE BEGIN Prototypes */
 
