@@ -61,8 +61,8 @@ all: main-build
 main-build: DMA3.elf secondary-outputs
 
 # Tool invocations
-DMA3.elf: $(OBJS) $(USER_OBJS) C:\Users\lucas\Documents\GitHub\DMA3\STM32F446RETX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "DMA3.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"C:\Users\lucas\Documents\GitHub\DMA3\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="DMA3.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+DMA3.elf: $(OBJS) $(USER_OBJS) C:\Users\jaque\STM32CubeIDE\workspace_1.6.0\DMA3\STM32F446RETX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "DMA3.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"C:\Users\jaque\STM32CubeIDE\workspace_1.6.0\DMA3\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="DMA3.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 
