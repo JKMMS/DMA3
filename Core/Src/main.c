@@ -47,17 +47,16 @@
 /* Private variables ---------------------------------------------------------*/
 
 /* USER CODE BEGIN PV */
-int64_t initVal = -1;
-int64_t bordaM = 0;
-int64_t valI = 0;
-int64_t valE = 0;
-int64_t valDMA = 0;
 volatile int64_t value;
+volatile uint16_t medidas[4];
+int64_t A = -1;
+int64_t bordaM = 0;
+int64_t B = 0;
+int64_t C = 0;
 uint8_t flag = 0;
 uint8_t flagT = 0;
 uint64_t periodo = 0;
 uint64_t periodoI = 0;
-volatile uint16_t medidas[4];
 uint16_t media1;
 uint16_t media2;
 char msg[50];
@@ -112,14 +111,10 @@ int main(void)
   MX_TIM8_Init();
   /* USER CODE BEGIN 2 */
 
-  HAL_TIM_Base_Start(&htim2); ///habilita o timer 2
-  HAL_TIM_IC_Start_IT(&htim2, TIM_CHANNEL_1); ///Habilita o Input Capture com Interrupção do Timer2 → PA0 → canal 1
-  HAL_TIM_IC_Start_DMA(&htim2 , TIM_CHANNEL_1, &valDMA, 1);
-  HAL_TIM_Base_Start(&htim10); ///habilita o timer 11
-  HAL_TIM_Base_Start_IT(&htim11); ///habilita o timer 10
+  HAL_TIM_Base_Start(&htim10); ///habilita o timer 10
+  HAL_TIM_Base_Start_IT(&htim11); ///habilita o timer 11
   HAL_TIM_IC_Start_DMA(&htim2, TIM_CHANNEL_1, &value, 1); ///Habilita o Input Capture com Interrupção do Timer2 → PA0 → canal 1
   HAL_TIM_PWM_Start_IT(&htim3, TIM_CHANNEL_1);
-  HAL_TIM_Base_Start_IT(&htim8);
   HAL_ADC_Start_DMA(&hadc1, medidas, 4);
 
   /* USER CODE END 2 */
@@ -135,8 +130,7 @@ int main(void)
 			HAL_UART_Transmit_IT(&huart2, msg, strlen(msg)); ///Usando a usart2, trasmite a mensagem
 			periodo = 0; ///iguala o periodo a zero para a próxima medição
 			flagT=1;
-		}
-		else{
+		} else {
 			sprintf(msg, "media2: %4lu\n\r",media2); ///faz o cálculo da frequência 1 dividindo o CLOCK do ARM pela multiplicação do período medido + 1 e o valor de PSC (que nesse caso é 47)
 			HAL_UART_Transmit_IT(&huart2, msg, strlen(msg)); ///Usando a usart2, trasmite a mensagem
 			periodo = 0; ///iguala o periodo a zero para a próxima medição
@@ -197,23 +191,20 @@ void SystemClock_Config(void)
 }
 
 /* USER CODE BEGIN 4 */
-void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin){
-	HAL_GPIO_ReadPin(GPIOC, GPIO_Pin);
-}
 void HAL_TIM_IC_CaptureCallback(TIM_HandleTypeDef *htim){
 	uint64_t calc(long a, long b, long c, long ARR); //Declarando a função calc
 
 	if(htim->Channel == HAL_TIM_ACTIVE_CHANNEL_1){ ///interrupção do canal 1 do timer 3
-		if (initVal == -1) { ///se initVal estiver com seu valor inicial, que é -1
-			initVal = valDMA; ///com o estouro, salva o valor que estava no contador
-		} else { ///se initVal for diferente de -1, ou seja, já mediu alguma coisa
+		if (A == -1) { ///se A estiver com seu valor inicial, que é -1
+			A = value; ///com o estouro, salva o valor que estava no contador
+		} else { ///se A for diferente de -1, ou seja, já mediu alguma coisa
 			if(flag == 0){
-				periodoI = calc(initVal, valDMA, valE, 999999); ///calcula o periodo utilizando a função criada calc
+				periodoI = calc(A, value, C, 999999); ///calcula o periodo utilizando a função criada calc
 				flag = 1;
 			}else {
-				periodo = calc(initVal, valDMA, valE, 999999); ///calcula o periodo utilizando a função criada calc
-				initVal = valDMA; ///initVal volta ao seu valor
-				valE = 0; ///valE volta ao seu valor inicial
+				periodo = calc(A, value, C, 999999); ///calcula o periodo utilizando a função criada calc
+				A = value; ///A volta ao seu valor
+				C = 0; ///C volta ao seu valor inicial
 				flag = 0;
 			}
 		}
@@ -223,7 +214,7 @@ void HAL_TIM_IC_CaptureCallback(TIM_HandleTypeDef *htim){
 /**
  * @brief Função que faz o cálculo do periodo desejado
  */
-uint64_t calc(long a, long b, long c, long ARR){ ///entra-se com 4 valores para fazer o cálculo, que vão ser os valores de initVal, valI, valE e ARR_CL
+uint64_t calc(long a, long b, long c, long ARR){ ///entra-se com 4 valores para fazer o cálculo, que vão ser os valores de A, B, C e ARR_CL
 	uint64_t period;
 	if(c > 0) ///se o número de períodos medidos durante a medição for 1 ou mais
 	{
@@ -244,23 +235,26 @@ uint64_t calc(long a, long b, long c, long ARR){ ///entra-se com 4 valores para 
 
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim){ ///Interrupção do final do timer 10, ou seja, estouro do timer
 	if (htim->Instance == TIM11) ///se a interrupção do timer 10 estourou
-			if(initVal > -1) valE++; ///conta quantas vezes o timer estourou adicionando na variável valE
+			if(A > -1) C++; ///conta quantas vezes o timer estourou adicionando na variável C
 }
+
 void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef* hadc){
 	uint16_t a=__HAL_TIM_GET_AUTORELOAD(&htim3);
 	uint16_t p=__HAL_TIM_GET_COMPARE(&htim3,TIM_CHANNEL_1);
 	uint16_t pul;
 	uint16_t arr;
-	media1=medidas[0];
-	media1+=medidas[2];
-	media1/=2;
-	pul=media1*a/4095;
-	if(pul<p*0.9 || pul>p*1.1)__HAL_TIM_SET_COMPARE(&htim3,TIM_CHANNEL_1, pul);
 	media2=medidas[1];
 	media2+=medidas[3];
 	media2/=2;
 	arr= media2*(ARRT3_MAX-ARRT3_MIN)/4095+ARRT3_MIN;
-	if(arr<a*0.9 || arr>a*1.1)__HAL_TIM_SET_AUTORELOAD(&htim3, arr);
+	if(arr<a*0.9 || arr>a*1.1) __HAL_TIM_SET_AUTORELOAD(&htim3, arr);
+	a = __HAL_TIM_GET_AUTORELOAD(&htim3);
+	media1=medidas[0];
+	media1+=medidas[2];
+	media1/=2;
+	pul=media1*a/4095;
+	if(pul<p*0.9 || pul>p*1.1) __HAL_TIM_SET_COMPARE(&htim3,TIM_CHANNEL_1, pul);
+
 	HAL_ADC_Start_DMA(&hadc1, medidas, 4);
 }
 /* USER CODE END 4 */
