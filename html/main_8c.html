@@ -1,0 +1,857 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Exercício DMA3: Referência do Arquivo C:/Users/jaque/STM32CubeIDE/workspace_1.6.0/DMA3/Core/Src/main.c</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Exercício DMA3
+   &#160;<span id="projectnumber">1.0</span>
+   </div>
+   <div id="projectbrief">Usando DMA para medir as duas bordas de um sinal gerado com IC, com resolução de tempo de 1us e exibido na serial</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Busca','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Busca');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_bc84256498dc5614be2bf6f96d0ea448.html">STM32CubeIDE</a></li><li class="navelem"><a class="el" href="dir_d68f96515942b0cbb122a2ff87c20a0f.html">workspace_1.6.0</a></li><li class="navelem"><a class="el" href="dir_9b358a532bfb556e4dd81d2ce4c546be.html">DMA3</a></li><li class="navelem"><a class="el" href="dir_e5335579b4ae5048a37a457f00aae52e.html">Core</a></li><li class="navelem"><a class="el" href="dir_3f2e4c802b2bf687566f72334f7d2316.html">Src</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#func-members">Funções</a> &#124;
+<a href="#var-members">Variáveis</a>  </div>
+  <div class="headertitle">
+<div class="title">Referência do Arquivo main.c</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>: Main program body  
+<a href="#details">Mais...</a></p>
+<div class="textblock"><code>#include &quot;main.h&quot;</code><br />
+<code>#include &quot;adc.h&quot;</code><br />
+<code>#include &quot;dma.h&quot;</code><br />
+<code>#include &quot;tim.h&quot;</code><br />
+<code>#include &quot;usart.h&quot;</code><br />
+<code>#include &quot;gpio.h&quot;</code><br />
+<code>#include &lt;stdio.h&gt;</code><br />
+<code>#include &lt;string.h&gt;</code><br />
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Funções</h2></td></tr>
+<tr class="memitem:a70af21c671abfcc773614a9a4f63d920"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#a70af21c671abfcc773614a9a4f63d920">SystemClock_Config</a> (void)</td></tr>
+<tr class="memdesc:a70af21c671abfcc773614a9a4f63d920"><td class="mdescLeft">&#160;</td><td class="mdescRight">System Clock Configuration.  <a href="main_8c.html#a70af21c671abfcc773614a9a4f63d920">Mais...</a><br /></td></tr>
+<tr class="separator:a70af21c671abfcc773614a9a4f63d920"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a840291bc02cba5474a4cb46a9b9566fe"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#a840291bc02cba5474a4cb46a9b9566fe">main</a> (void)</td></tr>
+<tr class="memdesc:a840291bc02cba5474a4cb46a9b9566fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">The application entry point.  <a href="main_8c.html#a840291bc02cba5474a4cb46a9b9566fe">Mais...</a><br /></td></tr>
+<tr class="separator:a840291bc02cba5474a4cb46a9b9566fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0cd91fd3a9608559c2a87a8ba6cba55f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#a0cd91fd3a9608559c2a87a8ba6cba55f">HAL_GPIO_EXTI_Callback</a> (uint16_t GPIO_Pin)</td></tr>
+<tr class="separator:a0cd91fd3a9608559c2a87a8ba6cba55f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a77a2401a35ddd9bd0b8fc28331b81381"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#a77a2401a35ddd9bd0b8fc28331b81381">HAL_TIM_IC_CaptureCallback</a> (TIM_HandleTypeDef *htim)</td></tr>
+<tr class="separator:a77a2401a35ddd9bd0b8fc28331b81381"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2ae9b8506e4b2418a497264e66cbbc37"><td class="memItemLeft" align="right" valign="top">uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#a2ae9b8506e4b2418a497264e66cbbc37">calc</a> (long a, long b, long c, long ARR)</td></tr>
+<tr class="memdesc:a2ae9b8506e4b2418a497264e66cbbc37"><td class="mdescLeft">&#160;</td><td class="mdescRight">Função que faz o cálculo do periodo desejado.  <a href="main_8c.html#a2ae9b8506e4b2418a497264e66cbbc37">Mais...</a><br /></td></tr>
+<tr class="separator:a2ae9b8506e4b2418a497264e66cbbc37"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8a3b0ad512a6e6c6157440b68d395eac"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#a8a3b0ad512a6e6c6157440b68d395eac">HAL_TIM_PeriodElapsedCallback</a> (TIM_HandleTypeDef *htim)</td></tr>
+<tr class="separator:a8a3b0ad512a6e6c6157440b68d395eac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af20a88180db1113be1e89266917d148b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#af20a88180db1113be1e89266917d148b">HAL_ADC_ConvCpltCallback</a> (ADC_HandleTypeDef *hadc)</td></tr>
+<tr class="separator:af20a88180db1113be1e89266917d148b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1730ffe1e560465665eb47d9264826f9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#a1730ffe1e560465665eb47d9264826f9">Error_Handler</a> (void)</td></tr>
+<tr class="memdesc:a1730ffe1e560465665eb47d9264826f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function is executed in case of error occurrence.  <a href="main_8c.html#a1730ffe1e560465665eb47d9264826f9">Mais...</a><br /></td></tr>
+<tr class="separator:a1730ffe1e560465665eb47d9264826f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+Variáveis</h2></td></tr>
+<tr class="memitem:aec836ca3e4c5afa633751c304a818a98"><td class="memItemLeft" align="right" valign="top">int64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#aec836ca3e4c5afa633751c304a818a98">initVal</a> = -1</td></tr>
+<tr class="memdesc:aec836ca3e4c5afa633751c304a818a98"><td class="mdescLeft">&#160;</td><td class="mdescRight">variavel que confere o primeiro valor medido do periodo  <a href="main_8c.html#aec836ca3e4c5afa633751c304a818a98">Mais...</a><br /></td></tr>
+<tr class="separator:aec836ca3e4c5afa633751c304a818a98"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6142ca6bb7202af2efb1b112f2ec50ef"><td class="memItemLeft" align="right" valign="top">int64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#a6142ca6bb7202af2efb1b112f2ec50ef">valI</a> = 0</td></tr>
+<tr class="memdesc:a6142ca6bb7202af2efb1b112f2ec50ef"><td class="mdescLeft">&#160;</td><td class="mdescRight">variavel que pega o final da medição do periodo  <a href="main_8c.html#a6142ca6bb7202af2efb1b112f2ec50ef">Mais...</a><br /></td></tr>
+<tr class="separator:a6142ca6bb7202af2efb1b112f2ec50ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3bc3d6e94d1c91279c3cbe41c2d52284"><td class="memItemLeft" align="right" valign="top">int64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#a3bc3d6e94d1c91279c3cbe41c2d52284">valE</a> = 0</td></tr>
+<tr class="memdesc:a3bc3d6e94d1c91279c3cbe41c2d52284"><td class="mdescLeft">&#160;</td><td class="mdescRight">variavel que controla o numero de estouros do timer dentro de uma medição  <a href="main_8c.html#a3bc3d6e94d1c91279c3cbe41c2d52284">Mais...</a><br /></td></tr>
+<tr class="separator:a3bc3d6e94d1c91279c3cbe41c2d52284"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9b6e34c4059b84777c4ccf5bc9a53811"><td class="memItemLeft" align="right" valign="top">volatile uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#a9b6e34c4059b84777c4ccf5bc9a53811">value</a></td></tr>
+<tr class="separator:a9b6e34c4059b84777c4ccf5bc9a53811"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aff31312fb16705aa73c53b945a1a6b30"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#aff31312fb16705aa73c53b945a1a6b30">flag</a> = 0</td></tr>
+<tr class="memdesc:aff31312fb16705aa73c53b945a1a6b30"><td class="mdescLeft">&#160;</td><td class="mdescRight">flag para o timer 2  <a href="main_8c.html#aff31312fb16705aa73c53b945a1a6b30">Mais...</a><br /></td></tr>
+<tr class="separator:aff31312fb16705aa73c53b945a1a6b30"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a28eb31c3c3f1c7e93329acc578d31a08"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#a28eb31c3c3f1c7e93329acc578d31a08">flagT</a> = 0</td></tr>
+<tr class="memdesc:a28eb31c3c3f1c7e93329acc578d31a08"><td class="mdescLeft">&#160;</td><td class="mdescRight">flag para o timer 10, que exibe a mensagem da serial  <a href="main_8c.html#a28eb31c3c3f1c7e93329acc578d31a08">Mais...</a><br /></td></tr>
+<tr class="separator:a28eb31c3c3f1c7e93329acc578d31a08"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae85c59cbe7b58bf84f3f0b7a4192305f"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#ae85c59cbe7b58bf84f3f0b7a4192305f">flagP</a> = 0</td></tr>
+<tr class="memdesc:ae85c59cbe7b58bf84f3f0b7a4192305f"><td class="mdescLeft">&#160;</td><td class="mdescRight">flag que controla quando acontece a interrupção externa pelo PC13  <a href="main_8c.html#ae85c59cbe7b58bf84f3f0b7a4192305f">Mais...</a><br /></td></tr>
+<tr class="separator:ae85c59cbe7b58bf84f3f0b7a4192305f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aac747ce1dee7ecdc33e0b50cfd8bdcfb"><td class="memItemLeft" align="right" valign="top">uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#aac747ce1dee7ecdc33e0b50cfd8bdcfb">periodo</a> = 0</td></tr>
+<tr class="memdesc:aac747ce1dee7ecdc33e0b50cfd8bdcfb"><td class="mdescLeft">&#160;</td><td class="mdescRight">variavel para calcular o periodo  <a href="main_8c.html#aac747ce1dee7ecdc33e0b50cfd8bdcfb">Mais...</a><br /></td></tr>
+<tr class="separator:aac747ce1dee7ecdc33e0b50cfd8bdcfb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a812e1f80bd79d0f3943235c217872683"><td class="memItemLeft" align="right" valign="top">uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#a812e1f80bd79d0f3943235c217872683">periodoI</a> = 0</td></tr>
+<tr class="memdesc:a812e1f80bd79d0f3943235c217872683"><td class="mdescLeft">&#160;</td><td class="mdescRight">variavel que pega o meio do periodo → borda de subida ou descida, dependendo o caso  <a href="main_8c.html#a812e1f80bd79d0f3943235c217872683">Mais...</a><br /></td></tr>
+<tr class="separator:a812e1f80bd79d0f3943235c217872683"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a82dfe70cb356c3d60ba8521b18e22cc5"><td class="memItemLeft" align="right" valign="top">volatile uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#a82dfe70cb356c3d60ba8521b18e22cc5">medidas</a> [4]</td></tr>
+<tr class="memdesc:a82dfe70cb356c3d60ba8521b18e22cc5"><td class="mdescLeft">&#160;</td><td class="mdescRight">realiza 4 medições para depois fazer a media  <a href="main_8c.html#a82dfe70cb356c3d60ba8521b18e22cc5">Mais...</a><br /></td></tr>
+<tr class="separator:a82dfe70cb356c3d60ba8521b18e22cc5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4588d4f4cf0b5f3ec1159a8b6c1bb304"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#a4588d4f4cf0b5f3ec1159a8b6c1bb304">media1</a></td></tr>
+<tr class="memdesc:a4588d4f4cf0b5f3ec1159a8b6c1bb304"><td class="mdescLeft">&#160;</td><td class="mdescRight">variáveis para calcular as médias  <a href="main_8c.html#a4588d4f4cf0b5f3ec1159a8b6c1bb304">Mais...</a><br /></td></tr>
+<tr class="separator:a4588d4f4cf0b5f3ec1159a8b6c1bb304"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a16e1e2a95ee268be1b8d37a364947fb7"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#a16e1e2a95ee268be1b8d37a364947fb7">media2</a></td></tr>
+<tr class="separator:a16e1e2a95ee268be1b8d37a364947fb7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae4f3f55be5de649fd367081b9d1b4b0c"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#ae4f3f55be5de649fd367081b9d1b4b0c">msg</a> [50]</td></tr>
+<tr class="memdesc:ae4f3f55be5de649fd367081b9d1b4b0c"><td class="mdescLeft">&#160;</td><td class="mdescRight">string usada para imprimir a mensagem na serial  <a href="main_8c.html#ae4f3f55be5de649fd367081b9d1b4b0c">Mais...</a><br /></td></tr>
+<tr class="separator:ae4f3f55be5de649fd367081b9d1b4b0c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Descrição detalhada</h2>
+<div class="textblock"><p>: Main program body </p>
+<p>Jaqueline Maurer Machado Turma 4422 Nº 11 Exercício 3 da Lista de DMA</p>
+<dl class="section attention"><dt>Atenção</dt><dd></dd></dl>
+<h2><center>&copy; Copyright (c) 2021 STMicroelectronics. All rights reserved.</center></h2>
+<p>This software component is licensed by ST under BSD 3-Clause license, the "License"; You may not use this file except in compliance with the License. You may obtain a copy of the License at: opensource.org/licenses/BSD-3-Clause </p>
+</div><h2 class="groupheader">Funções</h2>
+<a id="a2ae9b8506e4b2418a497264e66cbbc37"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2ae9b8506e4b2418a497264e66cbbc37">&#9670;&nbsp;</a></span>calc()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint64_t calc </td>
+          <td>(</td>
+          <td class="paramtype">long&#160;</td>
+          <td class="paramname"><em>a</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">long&#160;</td>
+          <td class="paramname"><em>b</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">long&#160;</td>
+          <td class="paramname"><em>c</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">long&#160;</td>
+          <td class="paramname"><em>ARR</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Função que faz o cálculo do periodo desejado. </p>
+<p>Eh exatamente a mesma função usada no exercicio anterior, que era de IC e tambem era necessario medir o periodo do sinal </p>
+<p>entra-se com 4 valores para fazer o cálculo, que vão ser os valores de initVal, valI, valE e ARR_CL</p>
+<p>variavel que retorna o periodo calculado na função</p>
+<p>se o número de períodos medidos durante a medição for 1 ou mais</p>
+<p>se o número de períodos medidos durante a medição for mais que 1</p>
+<p>ignorando o final do primeiro periodo</p>
+<p>se entre o valor inicial e o valor final (Internal) houverem periodos completos do timer3</p>
+<p>ou seja, se tiver mais que um período, utiliza o mesmo cálculo só acrescenta a parte de multiplicar o valor do ARR pelo número de períodos a mais que teve</p>
+<p>se o número de períodos medidos durante a medição for 1</p>
+<p>se o valor inicial e o valor final (Internal) estiverem em periodos subsequentes do timer3</p>
+<p>ou seja, se houver passado somente um período</p>
+<p>se o número de períodos medidos durante a medição não completar 1 inteiro</p>
+<p>se ainda estiver dentro do mesmo periodo do timer3, ou seja, não tiver passado um período completo</p>
+<p>a função retorna o valor do periodo calculado</p>
+<p>ele poderia entregar 0us, mas na real eh 1, entao soma +1</p>
+<div class="fragment"><div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;                                               { </div>
+<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;    uint64_t period; </div>
+<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;    <span class="keywordflow">if</span>(c &gt; 0) </div>
+<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;    {</div>
+<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;        <span class="keywordflow">if</span>(c &gt; 1) </div>
+<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;        {</div>
+<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;            c--;    </div>
+<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;            period = (ARR - a + b) + (ARR) * c; </div>
+<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;        }</div>
+<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;        <span class="keywordflow">else</span> period = (ARR - a + b); </div>
+<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;    }</div>
+<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;    <span class="keywordflow">else</span> period = b - a; </div>
+<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;    <span class="keywordflow">return</span> period + 1; </div>
+<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a1730ffe1e560465665eb47d9264826f9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1730ffe1e560465665eb47d9264826f9">&#9670;&nbsp;</a></span>Error_Handler()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Error_Handler </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>This function is executed in case of error occurrence. </p>
+<dl class="retval"><dt>Valores Retornados</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">None</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="fragment"><div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;{</div>
+<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;  <span class="comment">/* USER CODE BEGIN Error_Handler_Debug */</span></div>
+<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;  <span class="comment">/* User can add his own implementation to report the HAL error return state */</span></div>
+<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;  __disable_irq();</div>
+<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;  <span class="keywordflow">while</span> (1)</div>
+<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;  {</div>
+<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;  }</div>
+<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;  <span class="comment">/* USER CODE END Error_Handler_Debug */</span></div>
+<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="af20a88180db1113be1e89266917d148b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af20a88180db1113be1e89266917d148b">&#9670;&nbsp;</a></span>HAL_ADC_ConvCpltCallback()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void HAL_ADC_ConvCpltCallback </td>
+          <td>(</td>
+          <td class="paramtype">ADC_HandleTypeDef *&#160;</td>
+          <td class="paramname"><em>hadc</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>pega o valor total de ARR</p>
+<p>valor atual do COMPARE do mesmo timer</p>
+<p>faz a media tambem o PWM esta em 1Hz → PSC = 1999 e ARR = 41999 → gera o periodo do sinal → MAX uma outra frequencia → 7Hz → PSC = 1999 e ARR = 5999 → MIN Valores de constantes no IOC O led pisca em uma frequencia que pode variar de 1Hz ate 7Hz → esse valor foi pre-determinado, mas pode ser alterado de acordo com o desejado foi escolhido uma frequencia mais baixa para que seja possivel visualizar melhor a mudança da piscada do led</p>
+<p>faz uma porcentagem → o maximo da medida eh 4095</p>
+<p>media2 x variação → divide por 4095 e vai dar um valor entre 0 e 36000 e depois soma 6000 de volta na conta para desse jeito ter o novo valor de ARR</p>
+<p>se o ARR variar +10% ou -10%, seta ele para o valor novo</p>
+<p>faz duas medidas e depois faz a media das duas</p>
+<p>mesma coisa que o anterior para esse aqui, mas como eh o minimo nao precisa fazer a soma</p>
+<p>mesma coisa do anterior → confere se esta +10% ou -10% e seta ele para o novo valor</p>
+<p>manda rodar novamente</p>
+<p>quando for usar DMA, tem que ativar de novo, todas as vezes</p>
+<div class="fragment"><div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;                                                      {</div>
+<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;    uint16_t a=__HAL_TIM_GET_AUTORELOAD(&amp;<a class="code" href="stm32f4xx__it_8c.html#aac3d2c59ee0e3bbae1b99529a154eb62">htim3</a>); </div>
+<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;    uint16_t p=__HAL_TIM_GET_COMPARE(&amp;<a class="code" href="stm32f4xx__it_8c.html#aac3d2c59ee0e3bbae1b99529a154eb62">htim3</a>,TIM_CHANNEL_1); </div>
+<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;    uint16_t pul;</div>
+<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;    uint16_t arr;</div>
+<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;    <a class="code" href="main_8c.html#a16e1e2a95ee268be1b8d37a364947fb7">media2</a>=<a class="code" href="main_8c.html#a82dfe70cb356c3d60ba8521b18e22cc5">medidas</a>[1];</div>
+<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;    <a class="code" href="main_8c.html#a16e1e2a95ee268be1b8d37a364947fb7">media2</a>+=<a class="code" href="main_8c.html#a82dfe70cb356c3d60ba8521b18e22cc5">medidas</a>[3];</div>
+<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;    <a class="code" href="main_8c.html#a16e1e2a95ee268be1b8d37a364947fb7">media2</a>/=2;</div>
+<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;    arr= <a class="code" href="main_8c.html#a16e1e2a95ee268be1b8d37a364947fb7">media2</a>*(ARRT3_MAX-ARRT3_MIN)/4095+ARRT3_MIN; </div>
+<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;    <span class="keywordflow">if</span>(arr&lt;a*0.9 || arr&gt;a*1.1)__HAL_TIM_SET_AUTORELOAD(&amp;<a class="code" href="stm32f4xx__it_8c.html#aac3d2c59ee0e3bbae1b99529a154eb62">htim3</a>, arr); </div>
+<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;    <a class="code" href="main_8c.html#a4588d4f4cf0b5f3ec1159a8b6c1bb304">media1</a>=<a class="code" href="main_8c.html#a82dfe70cb356c3d60ba8521b18e22cc5">medidas</a>[0];</div>
+<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;    <a class="code" href="main_8c.html#a4588d4f4cf0b5f3ec1159a8b6c1bb304">media1</a>+=<a class="code" href="main_8c.html#a82dfe70cb356c3d60ba8521b18e22cc5">medidas</a>[2];</div>
+<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;    <a class="code" href="main_8c.html#a4588d4f4cf0b5f3ec1159a8b6c1bb304">media1</a>/=2;</div>
+<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;    pul=<a class="code" href="main_8c.html#a4588d4f4cf0b5f3ec1159a8b6c1bb304">media1</a>*arr/4095; </div>
+<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;    <span class="keywordflow">if</span>(pul&lt;p*0.9 || pul&gt;p*1.1)__HAL_TIM_SET_COMPARE(&amp;<a class="code" href="stm32f4xx__it_8c.html#aac3d2c59ee0e3bbae1b99529a154eb62">htim3</a>,TIM_CHANNEL_1, pul); </div>
+<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160; </div>
+<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;    HAL_ADC_Start_DMA(&amp;<a class="code" href="adc_8c.html#a22b804736f5648d52f639b2647d4ed13">hadc1</a>, <a class="code" href="main_8c.html#a82dfe70cb356c3d60ba8521b18e22cc5">medidas</a>, 4); </div>
+<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;}</div>
+<div class="ttc" id="aadc_8c_html_a22b804736f5648d52f639b2647d4ed13"><div class="ttname"><a href="adc_8c.html#a22b804736f5648d52f639b2647d4ed13">hadc1</a></div><div class="ttdeci">ADC_HandleTypeDef hadc1</div><div class="ttdef"><b>Definition:</b> adc.c:27</div></div>
+<div class="ttc" id="amain_8c_html_a16e1e2a95ee268be1b8d37a364947fb7"><div class="ttname"><a href="main_8c.html#a16e1e2a95ee268be1b8d37a364947fb7">media2</a></div><div class="ttdeci">uint16_t media2</div><div class="ttdef"><b>Definition:</b> main.c:80</div></div>
+<div class="ttc" id="amain_8c_html_a4588d4f4cf0b5f3ec1159a8b6c1bb304"><div class="ttname"><a href="main_8c.html#a4588d4f4cf0b5f3ec1159a8b6c1bb304">media1</a></div><div class="ttdeci">uint16_t media1</div><div class="ttdoc">variáveis para calcular as médias</div><div class="ttdef"><b>Definition:</b> main.c:79</div></div>
+<div class="ttc" id="amain_8c_html_a82dfe70cb356c3d60ba8521b18e22cc5"><div class="ttname"><a href="main_8c.html#a82dfe70cb356c3d60ba8521b18e22cc5">medidas</a></div><div class="ttdeci">volatile uint16_t medidas[4]</div><div class="ttdoc">realiza 4 medições para depois fazer a media</div><div class="ttdef"><b>Definition:</b> main.c:77</div></div>
+<div class="ttc" id="astm32f4xx__it_8c_html_aac3d2c59ee0e3bbae1b99529a154eb62"><div class="ttname"><a href="stm32f4xx__it_8c.html#aac3d2c59ee0e3bbae1b99529a154eb62">htim3</a></div><div class="ttdeci">TIM_HandleTypeDef htim3</div><div class="ttdef"><b>Definition:</b> tim.c:28</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a0cd91fd3a9608559c2a87a8ba6cba55f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0cd91fd3a9608559c2a87a8ba6cba55f">&#9670;&nbsp;</a></span>HAL_GPIO_EXTI_Callback()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void HAL_GPIO_EXTI_Callback </td>
+          <td>(</td>
+          <td class="paramtype">uint16_t&#160;</td>
+          <td class="paramname"><em>GPIO_Pin</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>pino configurado para ser uma interrupção externa → nesse caso eh o PC13</p>
+<p>toda vez q o de baixo der uma borda de descida, salva o valor</p>
+<p>borda de descida = terminou o periodo ativo do sinal ligar OUT e IN junto na proto (conferir os pinos) e depois liga em um led</p>
+<div class="fragment"><div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;                                              { </div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;    <a class="code" href="main_8c.html#ae85c59cbe7b58bf84f3f0b7a4192305f">flagP</a>=<a class="code" href="main_8c.html#aff31312fb16705aa73c53b945a1a6b30">flag</a>; </div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;}</div>
+<div class="ttc" id="amain_8c_html_ae85c59cbe7b58bf84f3f0b7a4192305f"><div class="ttname"><a href="main_8c.html#ae85c59cbe7b58bf84f3f0b7a4192305f">flagP</a></div><div class="ttdeci">uint8_t flagP</div><div class="ttdoc">flag que controla quando acontece a interrupção externa pelo PC13</div><div class="ttdef"><b>Definition:</b> main.c:71</div></div>
+<div class="ttc" id="amain_8c_html_aff31312fb16705aa73c53b945a1a6b30"><div class="ttname"><a href="main_8c.html#aff31312fb16705aa73c53b945a1a6b30">flag</a></div><div class="ttdeci">uint8_t flag</div><div class="ttdoc">flag para o timer 2</div><div class="ttdef"><b>Definition:</b> main.c:67</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a77a2401a35ddd9bd0b8fc28331b81381"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a77a2401a35ddd9bd0b8fc28331b81381">&#9670;&nbsp;</a></span>HAL_TIM_IC_CaptureCallback()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void HAL_TIM_IC_CaptureCallback </td>
+          <td>(</td>
+          <td class="paramtype">TIM_HandleTypeDef *&#160;</td>
+          <td class="paramname"><em>htim</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Declarando a função calc</p>
+<p>o periodo de trabalho eh o tempo do sinal em high</p>
+<p>interrupção do canal 1 do timer 2</p>
+<p>eh preciso medir a borda de subida e de descida</p>
+<p>se initVal estiver com seu valor inicial, que é -1</p>
+<p>com o estouro, salva o valor que estava no contador</p>
+<p>se initVal for diferente de -1, ou seja, se já mediu alguma coisa</p>
+<p>se ainda esta calculando o periodo "do meio" → periodoI (usado para calcular o periodo de trabalho)</p>
+<p>calcula o periodo utilizando a função criada calc</p>
+<p>muda o valor de flag para ser diferente de zero e entrar no else abaixo</p>
+<p>se ja esta calculando o periodo total → periodo</p>
+<p>calcula de novo, tudo dessa vez, porque agora esta no final, sabendo quantos estouros do timer teve</p>
+<p>calcula o periodo utilizando a função criada calc</p>
+<p>initVal volta ao seu valor</p>
+<p>zera valE</p>
+<p>zera a flag</p>
+<p>Habilita o Input Capture com Interrupção do Timer2 → PA0 → canal 1</p>
+<div class="fragment"><div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;                                                        {</div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;    uint64_t <a class="code" href="main_8c.html#a2ae9b8506e4b2418a497264e66cbbc37">calc</a>(<span class="keywordtype">long</span> a, <span class="keywordtype">long</span> b, <span class="keywordtype">long</span> c, <span class="keywordtype">long</span> ARR); </div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160; </div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;    <span class="keywordflow">if</span>(htim-&gt;Channel == HAL_TIM_ACTIVE_CHANNEL_1){ </div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="main_8c.html#aec836ca3e4c5afa633751c304a818a98">initVal</a> == -1) { </div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;            <a class="code" href="main_8c.html#aec836ca3e4c5afa633751c304a818a98">initVal</a> = <a class="code" href="main_8c.html#a9b6e34c4059b84777c4ccf5bc9a53811">value</a>; </div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;        } <span class="keywordflow">else</span> { </div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;            <span class="keywordflow">if</span>(<a class="code" href="main_8c.html#aff31312fb16705aa73c53b945a1a6b30">flag</a> == 0){ </div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;                <a class="code" href="main_8c.html#a812e1f80bd79d0f3943235c217872683">periodoI</a> = <a class="code" href="main_8c.html#a2ae9b8506e4b2418a497264e66cbbc37">calc</a>(<a class="code" href="main_8c.html#aec836ca3e4c5afa633751c304a818a98">initVal</a>, <a class="code" href="main_8c.html#a9b6e34c4059b84777c4ccf5bc9a53811">value</a>, <a class="code" href="main_8c.html#a3bc3d6e94d1c91279c3cbe41c2d52284">valE</a>, 999999); </div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;                <a class="code" href="main_8c.html#aff31312fb16705aa73c53b945a1a6b30">flag</a> = 1; </div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;            }<span class="keywordflow">else</span> { </div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;                <a class="code" href="main_8c.html#aac747ce1dee7ecdc33e0b50cfd8bdcfb">periodo</a> = <a class="code" href="main_8c.html#a2ae9b8506e4b2418a497264e66cbbc37">calc</a>(<a class="code" href="main_8c.html#aec836ca3e4c5afa633751c304a818a98">initVal</a>, <a class="code" href="main_8c.html#a9b6e34c4059b84777c4ccf5bc9a53811">value</a>, <a class="code" href="main_8c.html#a3bc3d6e94d1c91279c3cbe41c2d52284">valE</a>, 999999); </div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;                <a class="code" href="main_8c.html#aec836ca3e4c5afa633751c304a818a98">initVal</a> = <a class="code" href="main_8c.html#a9b6e34c4059b84777c4ccf5bc9a53811">value</a>; </div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;                <a class="code" href="main_8c.html#a3bc3d6e94d1c91279c3cbe41c2d52284">valE</a> = 0; </div>
+<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;                <a class="code" href="main_8c.html#aff31312fb16705aa73c53b945a1a6b30">flag</a> = 0; </div>
+<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;            }</div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;        }</div>
+<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;    }</div>
+<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;    HAL_TIM_IC_Start_DMA(&amp;<a class="code" href="stm32f4xx__it_8c.html#a2c80fd5510e2990a59a5c90d745c716c">htim2</a>, TIM_CHANNEL_1, &amp;<a class="code" href="main_8c.html#a9b6e34c4059b84777c4ccf5bc9a53811">value</a>, 1); </div>
+<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;}</div>
+<div class="ttc" id="amain_8c_html_a2ae9b8506e4b2418a497264e66cbbc37"><div class="ttname"><a href="main_8c.html#a2ae9b8506e4b2418a497264e66cbbc37">calc</a></div><div class="ttdeci">uint64_t calc(long a, long b, long c, long ARR)</div><div class="ttdoc">Função que faz o cálculo do periodo desejado.</div><div class="ttdef"><b>Definition:</b> main.c:281</div></div>
+<div class="ttc" id="amain_8c_html_a3bc3d6e94d1c91279c3cbe41c2d52284"><div class="ttname"><a href="main_8c.html#a3bc3d6e94d1c91279c3cbe41c2d52284">valE</a></div><div class="ttdeci">int64_t valE</div><div class="ttdoc">variavel que controla o numero de estouros do timer dentro de uma medição</div><div class="ttdef"><b>Definition:</b> main.c:61</div></div>
+<div class="ttc" id="amain_8c_html_a812e1f80bd79d0f3943235c217872683"><div class="ttname"><a href="main_8c.html#a812e1f80bd79d0f3943235c217872683">periodoI</a></div><div class="ttdeci">uint64_t periodoI</div><div class="ttdoc">variavel que pega o meio do periodo → borda de subida ou descida, dependendo o caso</div><div class="ttdef"><b>Definition:</b> main.c:75</div></div>
+<div class="ttc" id="amain_8c_html_a9b6e34c4059b84777c4ccf5bc9a53811"><div class="ttname"><a href="main_8c.html#a9b6e34c4059b84777c4ccf5bc9a53811">value</a></div><div class="ttdeci">volatile uint64_t value</div><div class="ttdef"><b>Definition:</b> main.c:65</div></div>
+<div class="ttc" id="amain_8c_html_aac747ce1dee7ecdc33e0b50cfd8bdcfb"><div class="ttname"><a href="main_8c.html#aac747ce1dee7ecdc33e0b50cfd8bdcfb">periodo</a></div><div class="ttdeci">uint64_t periodo</div><div class="ttdoc">variavel para calcular o periodo</div><div class="ttdef"><b>Definition:</b> main.c:73</div></div>
+<div class="ttc" id="amain_8c_html_aec836ca3e4c5afa633751c304a818a98"><div class="ttname"><a href="main_8c.html#aec836ca3e4c5afa633751c304a818a98">initVal</a></div><div class="ttdeci">int64_t initVal</div><div class="ttdoc">variavel que confere o primeiro valor medido do periodo</div><div class="ttdef"><b>Definition:</b> main.c:57</div></div>
+<div class="ttc" id="astm32f4xx__it_8c_html_a2c80fd5510e2990a59a5c90d745c716c"><div class="ttname"><a href="stm32f4xx__it_8c.html#a2c80fd5510e2990a59a5c90d745c716c">htim2</a></div><div class="ttdeci">TIM_HandleTypeDef htim2</div><div class="ttdef"><b>Definition:</b> tim.c:27</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a8a3b0ad512a6e6c6157440b68d395eac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8a3b0ad512a6e6c6157440b68d395eac">&#9670;&nbsp;</a></span>HAL_TIM_PeriodElapsedCallback()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void HAL_TIM_PeriodElapsedCallback </td>
+          <td>(</td>
+          <td class="paramtype">TIM_HandleTypeDef *&#160;</td>
+          <td class="paramname"><em>htim</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Interrupção do final do timer 11, ou seja, estouro do timer</p>
+<p>se a interrupção do timer 11 estourou</p>
+<p>se initVal for maior que -1, ou seja, se ja passou no minimo um estouro do timer</p>
+<p>conta quantas vezes o timer estourou adicionando na variável valE</p>
+<div class="fragment"><div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;                                                           { </div>
+<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;    <span class="keywordflow">if</span> (htim-&gt;Instance == TIM11) </div>
+<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;            <span class="keywordflow">if</span>(<a class="code" href="main_8c.html#aec836ca3e4c5afa633751c304a818a98">initVal</a> &gt; -1) <a class="code" href="main_8c.html#a3bc3d6e94d1c91279c3cbe41c2d52284">valE</a>++; </div>
+<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a840291bc02cba5474a4cb46a9b9566fe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a840291bc02cba5474a4cb46a9b9566fe">&#9670;&nbsp;</a></span>main()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int main </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The application entry point. </p>
+<dl class="retval"><dt>Valores Retornados</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">int</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<p>habilita o timer 10</p>
+<p>habilita o timer 11</p>
+<p>foi usado o timer 2 pois ele possui um valor maior que pode ser usado no ARR para dar o valor do periodo direto em micro segundos E colocar ambas as bordas na corfiguracao para fazer o que o exercicio pede</p>
+<p>Habilita o Input Capture com DMA do Timer2 → PA15 → canal 1</p>
+<p>PWM usado para gerar um sinal que sera usado para medir se o programa esta funcioando → marcar a opçao para ele começar desligado</p>
+<p>sempre desliga no estouro do timer → colocando a frequencia do timer vai ser a frequencia do sinal PWM → modulação de largura de pulso</p>
+<p>habilita uma frequencia aleatoria de PSC = 999 e ARR = 139</p>
+<p>Trigger Output → ativar o Update Event</p>
+<p>no IOC, o ADC esta configurado para ser ativado pelo timer, para continuar a sequencia de 4 medidas, que vao ser salvas dentro de um vetor de quatro espaços</p>
+<p>usando dois canais do ADC, adiciona o DMA no ADC1, mudar a prioridade dele (que vem em Low) → tem 4 medidas de ADC</p>
+<p>parametros → DMA continuous request colocar em enable e External Trigger Conversion Source → timer 8 Trigger out event (pq o 3 ja estava em uso) numero de conversoes = 2 pois esta usando duas entradas (que abre dois ranks, colocar um em 0 e outro em 1), detecção de borda de subida</p>
+<p>mudar a configuração de botao do PC13 → GPIO_EXIT13 → e habilitar em System Core → GPIO, marcar PC13 e external interrupt mode with falling tra la la em GPIO mode, pois cada vez que precionado sera considerado como uma interrupção externa</p>
+<p>GPIO → NVIC → ENABLE</p>
+<p>push botton → juntar com o de cima na proto PA6 gera o sinal do PWM → ligar com os dois de cima com os três ligados, ligar um led para o terra para ver piscando duas entradas do ADC, colocar em dois potenciomentos (no meio), um deles muda a frequencia do led e o outro quanto % do tempo o led fica ligado e desligado como ligar o potenciometro → o pino do ADC ligado no meio, uma ponta no VCC e a outra no terra se colocar o periodo no maximo, ele fica quase 1 segundo ligado, se ficar no minimo, ele fica quase o tempo todo desligado</p>
+<p>imprime na serial</p>
+<p>verifica se passou 1 segundo do Timer10 para imprimir a mensagem na tela (a mensagem é mostrada de 1 em 1 segundo para não ficar muito poluído)</p>
+<p>eh mostrado uma das três mensagens a cada segundo</p>
+<p>flagT começa em zero, entao será o primeiro valor a ser exibido</p>
+<p>periodo total do sinal</p>
+<p>imprime o valor do periodo total na serial</p>
+<p>altera o valor de flagT para 1 para entrar no proximo if e exibir a proxima mensagem</p>
+<p>Usando a usart2, trasmite a mensagem</p>
+<p>se ja imprimiu a mensagem de cima, entra nessa if</p>
+<p>periodo de trabalho = periodo que o sinal fica em nivel logico 1, ou seja, que ele definitivamente "trabalha" → usando a variavel periodoI, que pega o "meio do sinal"</p>
+<p>faz o cálculo da frequência 1 dividindo o CLOCK do ARM pela multiplicação do período medido + 1 e o valor de PSC (que nesse caso é 47)</p>
+<p>altera o valor de flagT para 2 para entrar no proximo if e exibir a proxima mensagem</p>
+<p>Usando a usart2, trasmite a mensagem</p>
+<p>se ja imprimiu a mensagem de cima, entra nessa if</p>
+<p>calcula a porcentagem que o led fica ligado → tambem usando a variavel de periodoI</p>
+<p>altera o valor de flagT de volta para zero para imprimir a primeira mensagem novamente</p>
+<p>zera o periodo para que ele possa ser calculado novamente</p>
+<p>Usando a usart2, trasmite a mensagem</p>
+<div class="fragment"><div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;{</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;  <span class="comment">/* USER CODE BEGIN 1 */</span></div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160; </div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;  <span class="comment">/* USER CODE END 1 */</span></div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160; </div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;  <span class="comment">/* MCU Configuration--------------------------------------------------------*/</span></div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160; </div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;  <span class="comment">/* Reset of all peripherals, Initializes the Flash interface and the Systick. */</span></div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;  HAL_Init();</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160; </div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;  <span class="comment">/* USER CODE BEGIN Init */</span></div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160; </div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;  <span class="comment">/* USER CODE END Init */</span></div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160; </div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;  <span class="comment">/* Configure the system clock */</span></div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;  <a class="code" href="main_8c.html#a70af21c671abfcc773614a9a4f63d920">SystemClock_Config</a>();</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160; </div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;  <span class="comment">/* USER CODE BEGIN SysInit */</span></div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160; </div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;  <span class="comment">/* USER CODE END SysInit */</span></div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160; </div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;  <span class="comment">/* Initialize all configured peripherals */</span></div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;  <a class="code" href="gpio_8c.html#ac724e431d2af879252de35615be2bdea">MX_GPIO_Init</a>();</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;  <a class="code" href="dma_8c.html#a323249dac769f9855c10b4ec9446b707">MX_DMA_Init</a>();</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;  <a class="code" href="usart_8c.html#a052088fe5bb3f807a4b2502e664fd4fd">MX_USART2_UART_Init</a>();</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;  <a class="code" href="tim_8c.html#a4b8ff887fd3fdf26605e35927e4ff202">MX_TIM2_Init</a>();</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;  <a class="code" href="tim_8c.html#a7912f2916786a2c33cb6fb8259ade58c">MX_TIM3_Init</a>();</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;  <a class="code" href="tim_8c.html#a897293ac5474c491773ec7404c531c3b">MX_TIM10_Init</a>();</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;  <a class="code" href="tim_8c.html#a0b1802cec6c627135b6c10a1ab67f7f3">MX_TIM11_Init</a>();</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;  <a class="code" href="adc_8c.html#acccd58aa70215a6b184ad242312ffd0c">MX_ADC1_Init</a>();</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;  <a class="code" href="tim_8c.html#a265aef7a46164094e791259bf59d9cb4">MX_TIM8_Init</a>();</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;  <span class="comment">/* USER CODE BEGIN 2 */</span></div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;  HAL_TIM_Base_Start(&amp;<a class="code" href="tim_8c.html#a3c386e4f1937c518c1beccddef92045e">htim10</a>); </div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160; </div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;  HAL_TIM_Base_Start_IT(&amp;<a class="code" href="stm32f4xx__it_8c.html#a2f22f985c4f33318fdcd4cc996623bf4">htim11</a>); </div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160; </div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;  HAL_TIM_IC_Start_DMA(&amp;<a class="code" href="stm32f4xx__it_8c.html#a2c80fd5510e2990a59a5c90d745c716c">htim2</a>, TIM_CHANNEL_1, &amp;<a class="code" href="main_8c.html#a9b6e34c4059b84777c4ccf5bc9a53811">value</a>, 1); </div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160; </div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;  HAL_TIM_PWM_Start_IT(&amp;<a class="code" href="stm32f4xx__it_8c.html#aac3d2c59ee0e3bbae1b99529a154eb62">htim3</a>, TIM_CHANNEL_1); </div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160; </div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;  HAL_TIM_Base_Start_IT(&amp;<a class="code" href="stm32f4xx__it_8c.html#a5faa27108379f799afb6984010bf0384">htim8</a>); </div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160; </div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;  HAL_ADC_Start_DMA(&amp;<a class="code" href="adc_8c.html#a22b804736f5648d52f639b2647d4ed13">hadc1</a>, <a class="code" href="main_8c.html#a82dfe70cb356c3d60ba8521b18e22cc5">medidas</a>, 4);</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160; </div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160; </div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;  <span class="comment">/* USER CODE END 2 */</span></div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160; </div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;  <span class="comment">/* Infinite loop */</span></div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;  <span class="comment">/* USER CODE BEGIN WHILE */</span></div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;  <span class="keywordflow">while</span> (1)</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;  { </div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160; </div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;      <span class="keywordflow">if</span>(__HAL_TIM_GET_FLAG(&amp;<a class="code" href="tim_8c.html#a3c386e4f1937c518c1beccddef92045e">htim10</a>, TIM_FLAG_UPDATE)){ </div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;        <span class="keywordflow">if</span>(<a class="code" href="main_8c.html#a28eb31c3c3f1c7e93329acc578d31a08">flagT</a>==0 &amp;&amp; <a class="code" href="main_8c.html#aac747ce1dee7ecdc33e0b50cfd8bdcfb">periodo</a>!=0){ </div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;            sprintf(<a class="code" href="main_8c.html#ae4f3f55be5de649fd367081b9d1b4b0c">msg</a>, <span class="stringliteral">&quot;Periodo do Sinal: %4luus\n\r&quot;</span>,<a class="code" href="main_8c.html#aac747ce1dee7ecdc33e0b50cfd8bdcfb">periodo</a>); </div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;            <a class="code" href="main_8c.html#a28eb31c3c3f1c7e93329acc578d31a08">flagT</a>=1; </div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;            HAL_UART_Transmit_IT(&amp;<a class="code" href="stm32f4xx__it_8c.html#aa9479c261d65eecedd3d9582f7f0f89c">huart2</a>, <a class="code" href="main_8c.html#ae4f3f55be5de649fd367081b9d1b4b0c">msg</a>, strlen(<a class="code" href="main_8c.html#ae4f3f55be5de649fd367081b9d1b4b0c">msg</a>)); </div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;        }</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code" href="main_8c.html#a28eb31c3c3f1c7e93329acc578d31a08">flagT</a>==1){ </div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;            sprintf(<a class="code" href="main_8c.html#ae4f3f55be5de649fd367081b9d1b4b0c">msg</a>, <span class="stringliteral">&quot;Periodo de Trabalho do Sinal: %4luus\n\r&quot;</span>,<a class="code" href="main_8c.html#ae85c59cbe7b58bf84f3f0b7a4192305f">flagP</a>==0? <a class="code" href="main_8c.html#a812e1f80bd79d0f3943235c217872683">periodoI</a> : <a class="code" href="main_8c.html#aac747ce1dee7ecdc33e0b50cfd8bdcfb">periodo</a> - <a class="code" href="main_8c.html#a812e1f80bd79d0f3943235c217872683">periodoI</a>); </div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;            <a class="code" href="main_8c.html#a28eb31c3c3f1c7e93329acc578d31a08">flagT</a>=2; </div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;            HAL_UART_Transmit_IT(&amp;<a class="code" href="stm32f4xx__it_8c.html#aa9479c261d65eecedd3d9582f7f0f89c">huart2</a>, <a class="code" href="main_8c.html#ae4f3f55be5de649fd367081b9d1b4b0c">msg</a>, strlen(<a class="code" href="main_8c.html#ae4f3f55be5de649fd367081b9d1b4b0c">msg</a>)); </div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;        }</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span>(<a class="code" href="main_8c.html#a28eb31c3c3f1c7e93329acc578d31a08">flagT</a>==2){ </div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;            sprintf(<a class="code" href="main_8c.html#ae4f3f55be5de649fd367081b9d1b4b0c">msg</a>, <span class="stringliteral">&quot;Representa %i%% do Sinal\n\r&quot;</span>,<a class="code" href="main_8c.html#ae85c59cbe7b58bf84f3f0b7a4192305f">flagP</a>==0? (<a class="code" href="main_8c.html#a812e1f80bd79d0f3943235c217872683">periodoI</a>*100/<a class="code" href="main_8c.html#aac747ce1dee7ecdc33e0b50cfd8bdcfb">periodo</a>) : ((<a class="code" href="main_8c.html#aac747ce1dee7ecdc33e0b50cfd8bdcfb">periodo</a> - <a class="code" href="main_8c.html#a812e1f80bd79d0f3943235c217872683">periodoI</a>)*100/<a class="code" href="main_8c.html#aac747ce1dee7ecdc33e0b50cfd8bdcfb">periodo</a>));</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;            <a class="code" href="main_8c.html#a28eb31c3c3f1c7e93329acc578d31a08">flagT</a>=0; </div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;            <a class="code" href="main_8c.html#aac747ce1dee7ecdc33e0b50cfd8bdcfb">periodo</a>=0; </div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;            HAL_UART_Transmit_IT(&amp;<a class="code" href="stm32f4xx__it_8c.html#aa9479c261d65eecedd3d9582f7f0f89c">huart2</a>, <a class="code" href="main_8c.html#ae4f3f55be5de649fd367081b9d1b4b0c">msg</a>, strlen(<a class="code" href="main_8c.html#ae4f3f55be5de649fd367081b9d1b4b0c">msg</a>)); </div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;        }</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;        __HAL_TIM_CLEAR_FLAG(&amp;<a class="code" href="tim_8c.html#a3c386e4f1937c518c1beccddef92045e">htim10</a>, TIM_FLAG_UPDATE);</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;    }</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160; </div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;    <span class="comment">/* USER CODE END WHILE */</span></div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160; </div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;    <span class="comment">/* USER CODE BEGIN 3 */</span></div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;  }</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;  <span class="comment">/* USER CODE END 3 */</span></div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;}</div>
+<div class="ttc" id="aadc_8c_html_acccd58aa70215a6b184ad242312ffd0c"><div class="ttname"><a href="adc_8c.html#acccd58aa70215a6b184ad242312ffd0c">MX_ADC1_Init</a></div><div class="ttdeci">void MX_ADC1_Init(void)</div><div class="ttdef"><b>Definition:</b> adc.c:31</div></div>
+<div class="ttc" id="adma_8c_html_a323249dac769f9855c10b4ec9446b707"><div class="ttname"><a href="dma_8c.html#a323249dac769f9855c10b4ec9446b707">MX_DMA_Init</a></div><div class="ttdeci">void MX_DMA_Init(void)</div><div class="ttdef"><b>Definition:</b> dma.c:38</div></div>
+<div class="ttc" id="agpio_8c_html_ac724e431d2af879252de35615be2bdea"><div class="ttname"><a href="gpio_8c.html#ac724e431d2af879252de35615be2bdea">MX_GPIO_Init</a></div><div class="ttdeci">void MX_GPIO_Init(void)</div><div class="ttdef"><b>Definition:</b> gpio.c:41</div></div>
+<div class="ttc" id="amain_8c_html_a28eb31c3c3f1c7e93329acc578d31a08"><div class="ttname"><a href="main_8c.html#a28eb31c3c3f1c7e93329acc578d31a08">flagT</a></div><div class="ttdeci">uint8_t flagT</div><div class="ttdoc">flag para o timer 10, que exibe a mensagem da serial</div><div class="ttdef"><b>Definition:</b> main.c:69</div></div>
+<div class="ttc" id="amain_8c_html_a70af21c671abfcc773614a9a4f63d920"><div class="ttname"><a href="main_8c.html#a70af21c671abfcc773614a9a4f63d920">SystemClock_Config</a></div><div class="ttdeci">void SystemClock_Config(void)</div><div class="ttdoc">System Clock Configuration.</div><div class="ttdef"><b>Definition:</b> main.c:206</div></div>
+<div class="ttc" id="amain_8c_html_ae4f3f55be5de649fd367081b9d1b4b0c"><div class="ttname"><a href="main_8c.html#ae4f3f55be5de649fd367081b9d1b4b0c">msg</a></div><div class="ttdeci">char msg[50]</div><div class="ttdoc">string usada para imprimir a mensagem na serial</div><div class="ttdef"><b>Definition:</b> main.c:82</div></div>
+<div class="ttc" id="astm32f4xx__it_8c_html_a2f22f985c4f33318fdcd4cc996623bf4"><div class="ttname"><a href="stm32f4xx__it_8c.html#a2f22f985c4f33318fdcd4cc996623bf4">htim11</a></div><div class="ttdeci">TIM_HandleTypeDef htim11</div><div class="ttdef"><b>Definition:</b> tim.c:31</div></div>
+<div class="ttc" id="astm32f4xx__it_8c_html_a5faa27108379f799afb6984010bf0384"><div class="ttname"><a href="stm32f4xx__it_8c.html#a5faa27108379f799afb6984010bf0384">htim8</a></div><div class="ttdeci">TIM_HandleTypeDef htim8</div><div class="ttdef"><b>Definition:</b> tim.c:29</div></div>
+<div class="ttc" id="astm32f4xx__it_8c_html_aa9479c261d65eecedd3d9582f7f0f89c"><div class="ttname"><a href="stm32f4xx__it_8c.html#aa9479c261d65eecedd3d9582f7f0f89c">huart2</a></div><div class="ttdeci">UART_HandleTypeDef huart2</div><div class="ttdef"><b>Definition:</b> usart.c:27</div></div>
+<div class="ttc" id="atim_8c_html_a0b1802cec6c627135b6c10a1ab67f7f3"><div class="ttname"><a href="tim_8c.html#a0b1802cec6c627135b6c10a1ab67f7f3">MX_TIM11_Init</a></div><div class="ttdeci">void MX_TIM11_Init(void)</div><div class="ttdef"><b>Definition:</b> tim.c:209</div></div>
+<div class="ttc" id="atim_8c_html_a265aef7a46164094e791259bf59d9cb4"><div class="ttname"><a href="tim_8c.html#a265aef7a46164094e791259bf59d9cb4">MX_TIM8_Init</a></div><div class="ttdeci">void MX_TIM8_Init(void)</div><div class="ttdef"><b>Definition:</b> tim.c:142</div></div>
+<div class="ttc" id="atim_8c_html_a3c386e4f1937c518c1beccddef92045e"><div class="ttname"><a href="tim_8c.html#a3c386e4f1937c518c1beccddef92045e">htim10</a></div><div class="ttdeci">TIM_HandleTypeDef htim10</div><div class="ttdef"><b>Definition:</b> tim.c:30</div></div>
+<div class="ttc" id="atim_8c_html_a4b8ff887fd3fdf26605e35927e4ff202"><div class="ttname"><a href="tim_8c.html#a4b8ff887fd3fdf26605e35927e4ff202">MX_TIM2_Init</a></div><div class="ttdeci">void MX_TIM2_Init(void)</div><div class="ttdef"><b>Definition:</b> tim.c:35</div></div>
+<div class="ttc" id="atim_8c_html_a7912f2916786a2c33cb6fb8259ade58c"><div class="ttname"><a href="tim_8c.html#a7912f2916786a2c33cb6fb8259ade58c">MX_TIM3_Init</a></div><div class="ttdeci">void MX_TIM3_Init(void)</div><div class="ttdef"><b>Definition:</b> tim.c:88</div></div>
+<div class="ttc" id="atim_8c_html_a897293ac5474c491773ec7404c531c3b"><div class="ttname"><a href="tim_8c.html#a897293ac5474c491773ec7404c531c3b">MX_TIM10_Init</a></div><div class="ttdeci">void MX_TIM10_Init(void)</div><div class="ttdef"><b>Definition:</b> tim.c:183</div></div>
+<div class="ttc" id="ausart_8c_html_a052088fe5bb3f807a4b2502e664fd4fd"><div class="ttname"><a href="usart_8c.html#a052088fe5bb3f807a4b2502e664fd4fd">MX_USART2_UART_Init</a></div><div class="ttdeci">void MX_USART2_UART_Init(void)</div><div class="ttdef"><b>Definition:</b> usart.c:32</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a70af21c671abfcc773614a9a4f63d920"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a70af21c671abfcc773614a9a4f63d920">&#9670;&nbsp;</a></span>SystemClock_Config()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SystemClock_Config </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>System Clock Configuration. </p>
+<dl class="retval"><dt>Valores Retornados</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">None</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Configure the main internal regulator output voltage</p>
+<p>Initializes the RCC Oscillators according to the specified parameters in the RCC_OscInitTypeDef structure.</p>
+<p>Initializes the CPU, AHB and APB buses clocks</p>
+<div class="fragment"><div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;{</div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;  RCC_OscInitTypeDef RCC_OscInitStruct = {0};</div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;  RCC_ClkInitTypeDef RCC_ClkInitStruct = {0};</div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160; </div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;  __HAL_RCC_PWR_CLK_ENABLE();</div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;  __HAL_PWR_VOLTAGESCALING_CONFIG(PWR_REGULATOR_VOLTAGE_SCALE3);</div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;  RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_HSI;</div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;  RCC_OscInitStruct.HSIState = RCC_HSI_ON;</div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;  RCC_OscInitStruct.HSICalibrationValue = RCC_HSICALIBRATION_DEFAULT;</div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;  RCC_OscInitStruct.PLL.PLLState = RCC_PLL_ON;</div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;  RCC_OscInitStruct.PLL.PLLSource = RCC_PLLSOURCE_HSI;</div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;  RCC_OscInitStruct.PLL.PLLM = 16;</div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;  RCC_OscInitStruct.PLL.PLLN = 336;</div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;  RCC_OscInitStruct.PLL.PLLP = RCC_PLLP_DIV4;</div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;  RCC_OscInitStruct.PLL.PLLQ = 2;</div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;  RCC_OscInitStruct.PLL.PLLR = 2;</div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;  <span class="keywordflow">if</span> (HAL_RCC_OscConfig(&amp;RCC_OscInitStruct) != HAL_OK)</div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;  {</div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;    <a class="code" href="main_8c.html#a1730ffe1e560465665eb47d9264826f9">Error_Handler</a>();</div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;  }</div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;  RCC_ClkInitStruct.ClockType = RCC_CLOCKTYPE_HCLK|RCC_CLOCKTYPE_SYSCLK</div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;                              |RCC_CLOCKTYPE_PCLK1|RCC_CLOCKTYPE_PCLK2;</div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;  RCC_ClkInitStruct.SYSCLKSource = RCC_SYSCLKSOURCE_PLLCLK;</div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;  RCC_ClkInitStruct.AHBCLKDivider = RCC_SYSCLK_DIV1;</div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;  RCC_ClkInitStruct.APB1CLKDivider = RCC_HCLK_DIV2;</div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;  RCC_ClkInitStruct.APB2CLKDivider = RCC_HCLK_DIV1;</div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160; </div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;  <span class="keywordflow">if</span> (HAL_RCC_ClockConfig(&amp;RCC_ClkInitStruct, FLASH_LATENCY_2) != HAL_OK)</div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;  {</div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;    <a class="code" href="main_8c.html#a1730ffe1e560465665eb47d9264826f9">Error_Handler</a>();</div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;  }</div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;}</div>
+<div class="ttc" id="amain_8c_html_a1730ffe1e560465665eb47d9264826f9"><div class="ttname"><a href="main_8c.html#a1730ffe1e560465665eb47d9264826f9">Error_Handler</a></div><div class="ttdeci">void Error_Handler(void)</div><div class="ttdoc">This function is executed in case of error occurrence.</div><div class="ttdef"><b>Definition:</b> main.c:339</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<h2 class="groupheader">Variáveis</h2>
+<a id="aff31312fb16705aa73c53b945a1a6b30"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aff31312fb16705aa73c53b945a1a6b30">&#9670;&nbsp;</a></span>flag</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t flag = 0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>flag para o timer 2 </p>
+
+</div>
+</div>
+<a id="ae85c59cbe7b58bf84f3f0b7a4192305f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae85c59cbe7b58bf84f3f0b7a4192305f">&#9670;&nbsp;</a></span>flagP</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t flagP = 0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>flag que controla quando acontece a interrupção externa pelo PC13 </p>
+
+</div>
+</div>
+<a id="a28eb31c3c3f1c7e93329acc578d31a08"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a28eb31c3c3f1c7e93329acc578d31a08">&#9670;&nbsp;</a></span>flagT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t flagT = 0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>flag para o timer 10, que exibe a mensagem da serial </p>
+
+</div>
+</div>
+<a id="aec836ca3e4c5afa633751c304a818a98"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aec836ca3e4c5afa633751c304a818a98">&#9670;&nbsp;</a></span>initVal</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int64_t initVal = -1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>variavel que confere o primeiro valor medido do periodo </p>
+
+</div>
+</div>
+<a id="a4588d4f4cf0b5f3ec1159a8b6c1bb304"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4588d4f4cf0b5f3ec1159a8b6c1bb304">&#9670;&nbsp;</a></span>media1</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t media1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>variáveis para calcular as médias </p>
+
+</div>
+</div>
+<a id="a16e1e2a95ee268be1b8d37a364947fb7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a16e1e2a95ee268be1b8d37a364947fb7">&#9670;&nbsp;</a></span>media2</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t media2</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a82dfe70cb356c3d60ba8521b18e22cc5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a82dfe70cb356c3d60ba8521b18e22cc5">&#9670;&nbsp;</a></span>medidas</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">volatile uint16_t medidas[4]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>realiza 4 medições para depois fazer a media </p>
+
+</div>
+</div>
+<a id="ae4f3f55be5de649fd367081b9d1b4b0c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae4f3f55be5de649fd367081b9d1b4b0c">&#9670;&nbsp;</a></span>msg</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char msg[50]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>string usada para imprimir a mensagem na serial </p>
+
+</div>
+</div>
+<a id="aac747ce1dee7ecdc33e0b50cfd8bdcfb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aac747ce1dee7ecdc33e0b50cfd8bdcfb">&#9670;&nbsp;</a></span>periodo</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint64_t periodo = 0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>variavel para calcular o periodo </p>
+
+</div>
+</div>
+<a id="a812e1f80bd79d0f3943235c217872683"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a812e1f80bd79d0f3943235c217872683">&#9670;&nbsp;</a></span>periodoI</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint64_t periodoI = 0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>variavel que pega o meio do periodo → borda de subida ou descida, dependendo o caso </p>
+
+</div>
+</div>
+<a id="a3bc3d6e94d1c91279c3cbe41c2d52284"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3bc3d6e94d1c91279c3cbe41c2d52284">&#9670;&nbsp;</a></span>valE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int64_t valE = 0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>variavel que controla o numero de estouros do timer dentro de uma medição </p>
+
+</div>
+</div>
+<a id="a6142ca6bb7202af2efb1b112f2ec50ef"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6142ca6bb7202af2efb1b112f2ec50ef">&#9670;&nbsp;</a></span>valI</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int64_t valI = 0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>variavel que pega o final da medição do periodo </p>
+
+</div>
+</div>
+<a id="a9b6e34c4059b84777c4ccf5bc9a53811"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9b6e34c4059b84777c4ccf5bc9a53811">&#9670;&nbsp;</a></span>value</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">volatile uint64_t value</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>volatile significa que o DMA nao consegue escrever se nao for especificado que eh volatile volatile → alguma coisa de fora ira mudar o valor dessa variavel (DMA, ADC...) usar volatil se o valor da variavel for alterado, se só for lido nao precisa </p>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Gerado por&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+</small></address>
+</body>
+</html>
